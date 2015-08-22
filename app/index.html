@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>عبدالواحد الأنصاري - الصفحة الرئيسية</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -20,41 +20,56 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+    <header style="margin-bottom: 7em;">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+            <button type="button" class="navbar-toggle collapsed" aria-expanded="false"
+                    data-toggle="collapse" data-target="#navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-
-            <a class="navbar-brand" href="#/">abdulwahedAlansariFrontend</a>
+            <a class="navbar-brand" href="#/" title="الصفحة الرئيسية">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </a>
           </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false">
+                   <span class="caret"></span>
+                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li title="مقتطف"><a href="#/quotes/new" class="text-right">مقتطف</a></li>
+                  <li title="مرئيات و صوتيات"><a href="#/media/new" class="text-right">وسائط</a></li>
+                  <li title="فعالية أو مناسبة"><a href="#/activities/new" class="text-right">فعالية</a></li>
+                  <li title="مقال"><a href="#/articles/new" class="text-right">مقال</a></li>
+                  <li title="كتاب أو إصدار"><a href="#/books/new" class="text-right">كتب</a></li>
+                </ul>
+              </li>
+              <li title="من أنا"><a href="#/about">من أنا</a></li>
+              <li title="راسلني"><a href="#/contact">راسلني</a></li>
+              <li title="مرئيات و صوتيات"><a href="#/media">وسائط</a></li>
+              <li title="مناسبات و فعاليات"><a href="#/activities">فعاليات</a></li>
+              <li title="كتب و إصدارات"><a href="#/books">كتب</a></li>
+              <li title="مقالات"><a href="#/articles">مقالات</a></li>
+              <li title="مقتطفات"><a href="#/quotes">مقتطفات</a></li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+    <div class="container" ng-view=""></div>
+    <hr>
+    <footer class="footer container">
+      <p class="text-center lead" dir="rtl">
+        &copy; 2015 عبدالواحد الأنصاري
+      </p>
     </div>
 
 
@@ -90,5 +105,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
+
+    <link href="https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css">
 </body>
 </html>
