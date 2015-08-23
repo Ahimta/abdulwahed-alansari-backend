@@ -8,39 +8,33 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('QuotesCtrl', function ($routeParams, $location) {
+  .controller('QuotesCtrl', function ($routeParams, $location, $firebaseArray) {
 
-    if ($routeParams.action === 'new') {
-      $location.hash('newQuoteButton');
-    }
+    var ref = new Firebase("https://abdulahed-alansari.firebaseio.com/quotes");
+    var quotes = this.quotes = $firebaseArray(ref);
 
-    angular.element('#newQuoteModal').on('shown.bs.modal', function () {
-      angular.element('#quoteText').focus();
-    });
+    if ($routeParams.action === 'new') { $location.hash('newQuoteButton'); }
 
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    angular.element('#newQuoteModal').on('shown.bs.modal', function () { angular.element('#quoteText').focus(); });
 
-    this.quotes = [
-      {id: 1, text: 'من جد و جد و من زرع حصد'},
-      {id: 2, text: 'سبق السيف العذل'},
-      {id: 3, text: 'أكلت يوم أكل الثور الأبيض'}
-    ];
+    this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
+
+    var editing = null;
+
+    this.isEditing = function (quoteId) { return editing === quoteId; };
+
+    this.edit = function (quoteId) { editing = quoteId; };
+
+    var cancel = this.cancel = function () { editing = null; };
 
     this.create = function (quote) {
-      console.log(quote);
+      quotes.$add(quote);
       quote.text = '';
       angular.element('#newQuoteModal').modal('hide');
     };
 
-    this.edit = function (quoteId) {
-      console.log(quoteId);
-    };
-
-    this.destroy = function (quoteId) {
-      console.log(quoteId);
+    this.update = function (quote) {
+      cancel();
+      quotes.$save(quote);
     };
   });

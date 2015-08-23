@@ -4,13 +4,19 @@
 
 <section class="container text-center">
   <article class="panel panel-default" ng-repeat="quote in quotesCtrl.quotes">
-    <div class="panel-body" ng-bind="quote.text"></div>
+    <div class="panel-body" dir="rtl" ng-bind="quote.text"
+         ng-hide="quotesCtrl.isEditing(quote.$id)"></div>
+    <div class="form-group" ng-show="quotesCtrl.isEditing(quote.$id)">
+      <textarea dir="rtl" ng-model="quote.text" class="form-control" required></textarea>
+    </div>
     <div class="panel-footer">
-      <div class="btn-group" role="group" aria-label="إدارة مقتطف">
-        <button type="button" class="btn btn-sm btn-danger"
-                ng-click="quotesCtrl.destroy(quote.id)">حذف</button>
-        <button type="button" class="btn btn-sm btn-primary"
-                ng-click="quotesCtrl.edit(quote.id)">تعديل</button>
+      <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-show="quotesCtrl.isEditing(quote.$id)">
+        <button type="button" class="btn btn-sm btn-success" ng-click="quotesCtrl.cancel()">إلغاء</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="quotesCtrl.update(quote)">حفظ</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="إدارة مقتطف" ng-hide="quotesCtrl.isEditing(quote.$id)">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="quotesCtrl.quotes.$remove(quote)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="quotesCtrl.edit(quote.$id)">تعديل</button>
       </div>
     </div>
   </article>
