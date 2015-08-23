@@ -1,0 +1,52 @@
+<section class="page-header text-center">
+  <h1>مقتطفات</h1>
+</section>
+
+<section class="container text-center">
+  <article class="panel panel-default" ng-repeat="quote in quotesCtrl.quotes">
+    <div class="panel-body" ng-bind="quote.text"></div>
+    <div class="panel-footer">
+      <div class="btn-group" role="group" aria-label="إدارة مقتطف">
+        <button type="button" class="btn btn-sm btn-danger"
+                ng-click="quotesCtrl.destroy(quote.id)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary"
+                ng-click="quotesCtrl.edit(quote.id)">تعديل</button>
+      </div>
+    </div>
+  </article>
+</section>
+
+<hr>
+
+<section class="container">
+  <button type="button" class="btn btn-success btn-lg btn-block"
+          id="newQuoteButton"
+          data-toggle="modal" data-target="#newQuoteModal">إضافة مقتطف</button>
+</section>
+
+<form ng-submit="quotesCtrl.create(quote)" name="createQuoteForm" dir="rtl">
+  <div class="modal fade" id="newQuoteModal" tabindex="-1" role="dialog" aria-labelledby="newQuoteModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="إغلاق">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title text-center" id="newQuoteModalLabel">إضافة مقتطف</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="quoteText">المحتوى</label>
+              <textarea id="quoteText" class="form-control" placeholder="المحتوى" name="quoteText"
+                        ng-model="quote.text" rows="2" autofocus required></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-success" value="إضافة مقتطف"
+                 ng-disabled="!createQuoteForm.$valid">
+          <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
