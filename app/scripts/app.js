@@ -38,6 +38,11 @@ angular
         controller: 'QuotesCtrl',
         controllerAs: 'quotesCtrl'
       })
+      .when('/articles/:action?', {
+        templateUrl: 'views/articles.html',
+        controller: 'ArticlesCtrl',
+        controllerAs: 'articlesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

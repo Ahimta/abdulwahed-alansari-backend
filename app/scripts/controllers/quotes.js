@@ -15,9 +15,9 @@ angular.module('abdulwahedAlansariFrontendApp')
 
     if ($routeParams.action === 'new') { $location.hash('newQuoteButton'); }
 
-    angular.element('#newQuoteModal').on('shown.bs.modal', function () { angular.element('#quoteText').focus(); });
-
     this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
+
+    angular.element('#newQuoteModal').on('shown.bs.modal', function () { angular.element('#quoteText').focus(); });
 
     var editing = null;
 
