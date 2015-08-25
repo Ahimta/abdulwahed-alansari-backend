@@ -8,7 +8,11 @@
       <header class="panel-heading">
         <a ng-href="#/articles/{{article.$id}}/show" dir="rtl" ng-bind="article.title"></a>
       </header>
-      <div class="panel-body"><p dir="rtl" ng-bind="article.body | limitTo:255"></p></div>
+      <div class="panel-body">
+        <p dir="rtl">
+          <span ng-bind="article.body | limitTo:255"></span><a ng-href="#/articles/{{article.$id}}/show">...</a>
+        </p>
+      </div>
       <footer class="panel-footer">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-danger"
