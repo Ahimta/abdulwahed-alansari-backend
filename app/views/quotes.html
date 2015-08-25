@@ -7,7 +7,7 @@
     <div class="panel-body" dir="rtl">
       <span ng-bind="quote.text" ng-hide="quotesCtrl.isEditing(quote.$id)"></span>
       <div class="form-group" ng-show="quotesCtrl.isEditing(quote.$id)">
-        <textarea dir="rtl" ng-model="quote.text" class="form-control" autofocus required></textarea>
+        <input type="text" dir="rtl" ng-model="quote.text" class="form-control" autofocus required>
       </div>
     </div>
     <div class="panel-footer">
@@ -44,8 +44,8 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="quoteText">المحتوى</label>
-            <textarea id="quoteText" class="form-control" placeholder="المحتوى" name="quoteText"
-                      ng-model="quote.text" rows="2" autofocus required></textarea>
+            <input type="text" id="quoteText" class="form-control" placeholder="المحتوى" name="quoteText"
+                      ng-model="quote.text" autofocus required>
           </div>
         </div>
         <div class="modal-footer">
