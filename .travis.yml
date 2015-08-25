@@ -2,12 +2,12 @@ sudo: false
 language: node_js
 node_js:
   - iojs
-  - '0.12'
+  - 0.12
 before_script:
   - npm install -g bower grunt-cli
   - gem install compass
   - bower install
-deploy: 'sh gh-pages.sh'
+after_script: sh gh-pages.sh
 env:
   global:
     secure: JxGUanaU8kwyf3e8hQLyN4Aj6Q77rtDQh7oAHKYqC7snS7sADIlaHA572raMcJD3iYCUsgHc4OoDfS+ivpHYJm4Ke9WU88ZFcdlYLOn1EMe+JHGUSybB+MLye61e/40zlJIlIV0FaWbhmTw1EG0rB01yGwJvPyNo+BfharI0RTA+kC0kWif7mu3Ywy5mbs56GDLi7m/cl0POnhiRUCtTGwF+VjVfPphzDSsCRSY8aaXkJ6MOlNwbAjyfMAmdUoSH8cIsbBW5Qvh4gKN/JX4f0MLYDebYeLyvGC2wZMxHuwY8ZSZQKfd1vibTlHTni2J5CddWMs30MQ5PejzhadUcj7kuTwvkMVnDgicKnCQOFKoFkRg61AEz4TXRDMd+YE7wk5/nlTc53rHrcqCQbBFFjt0GiVnXTY3USnxBh7Dq/EshmZpnGTDkUcIeIBaBdZChGTPoeXYrkoYg3XyP+MZ6ORo4QDzjmchAqm8rXd9eTbMfwZjzbh4hLK5Urq7bunrPIy0nDcrT8NcrKbcXgMvCQVdJggywRtBaoJ/gYv3+6oTagLiPkFNnU9PzA141mFdyy2XLCg83FUWqFlyS3GpcxSiKlLETyVwZKuS8E2cdeZ3GIgJe7wUIe0KsSWby17myW4gMOCudEvCcBnRKaqK5JQjEOXhjlR2fqHf0lrRkbII=
