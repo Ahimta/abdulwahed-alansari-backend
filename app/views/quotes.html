@@ -7,14 +7,13 @@
     <div class="panel-body" dir="rtl">
       <span ng-bind="quote.text" ng-hide="quotesCtrl.isEditing(quote.$id)"></span>
       <div class="form-group" ng-show="quotesCtrl.isEditing(quote.$id)">
-        <textarea dir="rtl" ng-model="quote.text" class="form-control" required
-                  ng-change="quotesCtrl.quotes.$save(quote)"></textarea>
+        <textarea dir="rtl" ng-model="quote.text" class="form-control" autofocus required></textarea>
       </div>
     </div>
     <div class="panel-footer">
       <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-show="quotesCtrl.isEditing(quote.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="quotesCtrl.quotes.$remove(quote)">حذف</button>
-        <button type="button" class="btn btn-sm btn-primary" ng-click="quotesCtrl.cancel()">حفظ</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="quotesCtrl.update(quote)">حفظ</button>
       </div>
       <div class="btn-group" role="group" aria-label="إدارة مقتطف" ng-hide="quotesCtrl.isEditing(quote.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="quotesCtrl.quotes.$remove(quote)">حذف</button>

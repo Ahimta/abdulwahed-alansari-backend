@@ -1,0 +1,38 @@
+<header class="page-header">
+  <div class="container" dir="rtl">
+    <ol class="breadcrumb">
+      <li><a href="#/">الصفحة الرئيسية</a></li>
+      <li><a href="#/articles">مقالات</a></li>
+      <li class="active" ng-bind="vm.article.title"></li>
+    </ol>
+  </div>
+</header>
+
+<article>
+  <header>
+    <h1 class="text-center" dir="rtl" ng-bind="vm.article.title" ng-hide="vm.isEditing()"></h1>
+    <div class="form-group container" dir="rtl" ng-show="vm.isEditing()">
+      <label dir="rtl" for="articleTitle">العنوان</label>
+      <input type="text" class="form-control" dir="rtl" id="articleTitle" name="articleTitle"
+             ng-model="vm.article.title" placeholder="العنوان" autofocus required>
+    </div>
+  </header>
+  <div class="text-right container">
+    <p dir="rtl" ng-bind="vm.article.body" ng-hide="vm.isEditing()"></p>
+    <div class="form-group" dir="rtl" ng-show="vm.isEditing()">
+      <label dir="rtl" for="articleBody">المحتوى</label>
+      <textarea class="form-control" dir="rtl" id="articleBody" name="articleBody" ng-model="vm.article.body"
+                placeholder="المحتوى" required></textarea>
+    </div>
+  </div>
+  <footer class="text-center">
+    <div class="btn-group" ng-hide="vm.isEditing()">
+      <button type="button" class="btn btn-sm btn-danger" ng-click="vm.destroy()">حذف</button>
+      <a ng-href="#/article/{{vm.article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
+    </div>
+    <div class="btn-group" ng-show="vm.isEditing()">
+      <button type="button" class="btn btn-sm btn-danger" ng-click="vm.destroy()">حذف</button>
+      <button type="button" class="btn btn-sm btn-primary" ng-click="vm.save()">حفظ</a>
+    </div>
+  </footer>
+</article>

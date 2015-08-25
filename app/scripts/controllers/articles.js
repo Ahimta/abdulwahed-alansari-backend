@@ -14,7 +14,7 @@ angular.module('abdulwahedAlansariFrontendApp')
 
     if ($routeParams.action === 'new') { $location.hash('newArticleButton'); }
 
-    var ref = new Firebase("https://abdulahed-alansari.firebaseio.com/articles");
+    var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/articles');
     var articles = this.articles = $firebaseArray(ref);
 
     angular.element('#newArticleModal').on('shown.bs.modal', function () { angular.element('#articleTitle').focus(); });

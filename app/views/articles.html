@@ -6,18 +6,18 @@
   <div class="col-md-4" ng-repeat="article in articlesCtrl.articles">
     <article class="panel panel-default">
       <header class="panel-heading">
-        <a ng-href="#/articles/{{article.$id}}/show" dir="rtl" ng-bind="article.title"></a>
+        <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
       </header>
       <div class="panel-body">
         <p dir="rtl">
-          <span ng-bind="article.body | limitTo:255"></span><a ng-href="#/articles/{{article.$id}}/show">...</a>
+          <span ng-bind="article.body | limitTo:255"></span><a ng-href="#/article/{{article.$id}}">...</a>
         </p>
       </div>
       <footer class="panel-footer">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-danger"
                   ng-click="articlesCtrl.articles.$remove(article)">حذف</button>
-          <a ng-href="#/articles/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
+          <a ng-href="#/article/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
         </div>
       </footer>
     </article>

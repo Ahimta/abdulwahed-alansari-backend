@@ -43,6 +43,11 @@ angular
         controller: 'ArticlesCtrl',
         controllerAs: 'articlesCtrl'
       })
+      .when('/article/:id/:action?', {
+        templateUrl: 'views/article.html',
+        controller: 'ArticleCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
