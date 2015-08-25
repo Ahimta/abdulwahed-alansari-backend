@@ -8,7 +8,7 @@ before_script:
   - npm install -g bower grunt-cli
   - gem install compass
   - bower install
-after_success:
+after_script:
   - sh gh-pages.sh
 env:
   global:
