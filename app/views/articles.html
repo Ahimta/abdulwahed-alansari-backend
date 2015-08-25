@@ -10,7 +10,7 @@
 </div>
 
 <section class="container text-right">
-  <div class="col-md-4" ng-repeat="article in articlesCtrl.articles">
+  <div ng-repeat="article in articlesCtrl.articles">
     <article class="panel panel-default">
       <header class="panel-heading">
         <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
