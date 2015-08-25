@@ -48,6 +48,11 @@ angular
         controller: 'ArticleCtrl',
         controllerAs: 'vm'
       })
+      .when('/books/:action?', {
+        templateUrl: 'views/books.html',
+        controller: 'BooksCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
