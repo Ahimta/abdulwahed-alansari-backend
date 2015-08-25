@@ -12,6 +12,6 @@ git add --force dist
 git add .
 
 git commit -am "Deploy to gh-pages"
-git push --force --quite "https://${GH_TOKEN}@github.com/Ahimta/abdulwahed-alansari-frontend.git" `git subtree split --prefix dist gh-pages`:gh-pages > /dev/null 2>&1
+git push --force --quite "https://${GH_TOKEN}@github.com/Ahimta/abdulwahed-alansari-frontend.git" `git subtree split --prefix dist gh-pages`:gh-pages &> /dev/null
 
 git checkout master
