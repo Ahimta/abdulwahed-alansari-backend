@@ -10,8 +10,6 @@
 angular.module('abdulwahedAlansariFrontendApp')
   .controller('ArticlesCtrl', function ($routeParams, $location, $firebaseArray) {
 
-    this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
-
     if ($routeParams.action === 'new') { $location.hash('newArticleButton'); }
 
     var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/articles');

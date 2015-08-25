@@ -16,8 +16,6 @@ angular.module('abdulwahedAlansariFrontendApp')
 
     article.$loaded().then(function () { scope.article = article; });
 
-    this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
-
     this.isEditing = function () { return $routeParams.action === 'edit'; };
 
     this.save = function () {

@@ -10,8 +10,6 @@
 angular.module('abdulwahedAlansariFrontendApp')
   .controller('NavbarCtrl', function ($location) {
 
-    this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
-
     function isActive (urlOrUrls) {
       var path = $location.path();
       return Array.isArray(urlOrUrls) ? (urlOrUrls.indexOf(path) >= 0) : (path === urlOrUrls);

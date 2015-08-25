@@ -18,6 +18,6 @@ describe('Controller: ArticlesCtrl', function () {
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(ArticlesCtrl.awesomeThings.length).toBe(3);
+    expect(!!ArticlesCtrl).toBe(true);
   });
 });

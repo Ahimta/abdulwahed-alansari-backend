@@ -9,9 +9,4 @@
  */
 angular.module('abdulwahedAlansariFrontendApp')
   .controller('HomepageCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });
