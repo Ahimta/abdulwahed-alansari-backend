@@ -13,5 +13,3 @@ git add .
 
 git commit -am "Deploy to gh-pages"
 git push --force --quiet "https://${GH_TOKEN}@github.com/Ahimta/abdulwahed-alansari-frontend.git" `git subtree split --prefix dist gh-pages`:gh-pages
-
-git checkout master
