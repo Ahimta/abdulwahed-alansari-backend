@@ -5,6 +5,9 @@ git checkout -b gh-pages master
 
 grunt build
 
+git config user.name "Travis CI"
+git config user.email "ahimta@gmail.com"
+
 git add --force dist
 git add .
 
