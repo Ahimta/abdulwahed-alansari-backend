@@ -17,7 +17,7 @@
       </header>
       <div class="panel-body">
         <p dir="rtl">
-          <pre dir="rtl" ng-bind="article.body | limitTo:255"></pre>
+          <p dir="rtl" ng-bind-html="article.body | limitTo:255"></p>
           <a dir="rtl" ng-href="#/article/{{article.$id}}">المزيد...</a>
         </p>
       </div>
