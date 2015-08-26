@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'ckeditor'
   ])
   .config(function ($routeProvider) {
     $routeProvider
