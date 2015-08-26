@@ -19,8 +19,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'angular-loading-bar',
-    'ui.tinymce'
+    'angular-loading-bar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
