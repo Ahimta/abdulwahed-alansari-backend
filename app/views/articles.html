@@ -8,13 +8,20 @@
     <li class="active">مقالات</li>
   </ol>
 </div>
-<section class="container">
+
+<section class="container text-right">
   <div ng-repeat="article in articlesCtrl.articles">
     <article class="panel panel-default">
-      <div class="panel-body text-center">
-        <a dir="rtl" ng-href="#/article/{{article.$id}}" ng-bind="article.title"></a>
+      <header class="panel-heading">
+        <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
+      </header>
+      <div class="panel-body">
+        <p dir="rtl">
+          <p dir="rtl" ng-bind-html="article.body | limitTo:255"></p>
+          <a dir="rtl" ng-href="#/article/{{article.$id}}">المزيد...</a>
+        </p>
       </div>
-      <footer class="panel-footer text-center">
+      <footer class="panel-footer">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-danger"
                   ng-click="articlesCtrl.articles.$remove(article)">حذف</button>
@@ -52,7 +59,7 @@
           <div class="form-group">
             <label for="articleBody">المحتوى</label>
             <textarea id="articleBody" class="form-control" placeholder="المحتوى" name="articleBody"
-                      ng-model="article.body" ui-tinymce required></textarea>
+                      ng-model="article.body" rows="2" required></textarea>
           </div>
         </div>
         <div class="modal-footer">

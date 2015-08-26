@@ -18,12 +18,12 @@
 </div>
 
 <article>
-  <div class="container">
+  <div class="text-right container">
     <p dir="rtl" ng-bind-html="vm.article.body" ng-hide="vm.isEditing()"></p>
     <div class="form-group" dir="rtl" ng-show="vm.isEditing()">
       <label class="sr-only" dir="rtl" for="articleBody">المحتوى</label>
       <textarea class="form-control" dir="rtl" id="articleBody" name="articleBody" ng-model="vm.article.body"
-                placeholder="المحتوى" ui-tinymce required></textarea>
+                placeholder="المحتوى" required></textarea>
     </div>
   </div>
   <footer class="text-center">
