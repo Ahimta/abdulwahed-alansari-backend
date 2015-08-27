@@ -12,16 +12,10 @@
 <section class="container text-right">
   <div ng-repeat="article in articlesCtrl.articles">
     <article class="panel panel-default">
-      <header class="panel-heading">
+      <div class="panel-body text-center">
         <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
-      </header>
-      <div class="panel-body">
-        <p dir="rtl">
-          <pre dir="rtl" ng-bind="article.body | limitTo:255"></pre>
-          <a dir="rtl" ng-href="#/article/{{article.$id}}">المزيد...</a>
-        </p>
       </div>
-      <footer class="panel-footer">
+      <footer class="panel-footer text-center">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-danger"
                   ng-click="articlesCtrl.articles.$remove(article)">حذف</button>
