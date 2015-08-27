@@ -30,6 +30,16 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "ckeditor": {
+      "main": [
+        "skins/moono/editor.css",
+        "contents.css",
+        "ckeditor.js",
+        "config.js",
+        "lang/ar.js",
+        "lang/en.js"
+      ]
     }
   },
   "resolutions": {
