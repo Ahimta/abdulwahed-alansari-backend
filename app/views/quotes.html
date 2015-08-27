@@ -12,9 +12,9 @@
 <section class="container text-center">
   <article class="panel panel-default" ng-repeat="quote in quotesCtrl.quotes">
     <div class="panel-body" dir="rtl">
-      <span ng-bind="quote.text" ng-hide="quotesCtrl.isEditing(quote.$id)"></span>
+      <pre ng-bind="quote.text" ng-hide="quotesCtrl.isEditing(quote.$id)"></pre>
       <div class="form-group" ng-show="quotesCtrl.isEditing(quote.$id)">
-        <input type="text" dir="rtl" ng-model="quote.text" class="form-control" autofocus required>
+        <textarea dir="rtl" ng-model="quote.text" class="form-control" autofocus required msd-elastic></textarea>
       </div>
     </div>
     <div class="panel-footer">
@@ -51,8 +51,8 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="quoteText">المحتوى</label>
-            <input type="text" id="quoteText" class="form-control" placeholder="المحتوى" name="quoteText"
-                      ng-model="quote.text" autofocus required>
+            <textarea id="quoteText" class="form-control" placeholder="المحتوى" name="quoteText"
+                      ng-model="quote.text" autofocus required msd-elastic></textarea>
           </div>
         </div>
         <div class="modal-footer">

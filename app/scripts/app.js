@@ -19,8 +19,12 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'monospaced.elastic'
   ])
+  .config(function (msdElasticConfig) {
+    msdElasticConfig.append = '\n';
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
