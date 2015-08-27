@@ -8,13 +8,11 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticleCtrl', function ($routeParams, $location, $firebaseObject, CKEDITOR_OPTIONS) {
+  .controller('ArticleCtrl', function ($routeParams, $location, $firebaseObject) {
 
     var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/articles/' + $routeParams.id);
     var article = $firebaseObject(ref);
     var scope = this;
-
-    this.CKEDITOR_OPTIONS = CKEDITOR_OPTIONS;
 
     article.$loaded().then(function () { scope.article = article; });
 
