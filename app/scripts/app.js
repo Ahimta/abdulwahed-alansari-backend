@@ -53,11 +53,6 @@ angular
         controller: 'BooksCtrl',
         controllerAs: 'vm'
       })
-      .when('/articles/new', {
-        templateUrl: 'views/articles_new.html',
-        controller: 'ArticlesNewCtrl',
-        controllerAs: 'vm'
-      })
       .otherwise({
         redirectTo: '/'
       });
