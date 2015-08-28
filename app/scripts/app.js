@@ -52,9 +52,14 @@ angular
         controller: 'ArticleCtrl',
         controllerAs: 'vm'
       })
-      .when('/books/:action?', {
+      .when('/books', {
         templateUrl: 'views/books.html',
         controller: 'BooksCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/books/new', {
+        templateUrl: 'views/books_new.html',
+        controller: 'BooksNewCtrl',
         controllerAs: 'vm'
       })
       .otherwise({

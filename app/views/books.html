@@ -1,1 +1,62 @@
-<p class="text-center">This is the books view2.</p>
+<header class="page-header">
+  <header>
+    <h1 class="text-center" dir="rtl">كتب</h1>
+  </header>
+</header>
+
+<section class="container" dir="rtl">
+  <ol class="breadcrumb">
+    <li><a href="#/">الصفحة الرئيسية</a></li>
+    <li class="active">كتب</li>
+  </ol>
+</section>
+
+<section class="container">
+  <article class="panel panel-primary" ng-repeat="book in vm.books">
+    <header class="panel-heading text-center">
+      <span dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
+      <input type="text" class="form-control" dir="rtl" autofocus required
+             ng-model="book.title" ng-show="vm.isEditing(book.$id)">
+    </header>
+    <div class="panel-body">
+      <pre dir="rtl" ng-bind="book.description" ng-hide="vm.isEditing(book.$id)"></pre>
+      <textarea class="form-control" dir="rtl" placeholder="الوصف"
+                ng-model="book.description" ng-show="vm.isEditing(book.$id)" msd-elastic></textarea>
+    </div>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td class="text-center">
+            <span ng-bind="book.pages" ng-hide="vm.isEditing(book.$id)"></span>
+            <input type="number" min="1" step="1" class="form-control" dir="rtl"
+                   ng-model="book.pages" ng-show="vm.isEditing(book.$id)">
+          </td>
+          <th class="text-center">عدد الصفحات</th></tr>
+        <tr>
+          <td class="text-center">
+            <span ng-bind="book.price" ng-hide="vm.isEditing(book.$id)"></span>
+            <input type="number" min="0" step="1" class="form-control" dir="rtl"
+                   ng-model="book.price" ng-show="vm.isEditing(book.$id)">
+          </td>
+          <th class="text-center">السعر</th>
+        </tr>
+      </tbody>
+    </table>
+    <footer class="panel-footer text-center">
+      <div class="btn-group" ng-hide="vm.isEditing(book.$id)">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.books.$remove(book)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.edit(book.$id)">تعديل</button>
+      </div>
+      <div class="btn-group" ng-show="vm.isEditing(book.$id)">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.books.$remove(book)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.update(book)">حفظ</button>
+      </div>
+    </footer>
+  </article>
+</section>
+
+<hr>
+
+<footer class="container">
+  <a href="#/books/new" class="btn btn-lg btn-block btn-success">إضافة كتاب</a>
+</footer>

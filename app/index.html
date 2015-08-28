@@ -55,11 +55,11 @@
                   <li class="disabled" title="فعالية أو مناسبة" ng-class="vm.getClass('/activities/new')">
                     <a href="#/activities/new" class="text-right">فعالية</a>
                   </li>
+                  <li title="كتاب أو إصدار" ng-class="vm.getClass('/books/new')">
+                    <a href="#/books/new" class="text-right">كتاب</a>
+                  </li>
                   <li title="مقال" ng-class="vm.getClass('/articles/new')">
                     <a href="#/articles/new" class="text-right">مقال</a>
-                  </li>
-                  <li class="disabled" title="كتاب أو إصدار" ng-class="vm.getClass('/books/new')">
-                    <a href="#/books/new" class="text-right">كتاب</a>
                   </li>
                 </ul>
               </li>
@@ -75,7 +75,7 @@
               <li class="disabled" title="مناسبات و فعاليات" ng-class="vm.getClass(['/activities', '/activities/new'])">
                 <a href="#/activities">فعاليات</a>
               </li>
-              <li class="disabled" title="كتب و إصدارات" ng-class="vm.getClass(['/books', '/books/new'])">
+              <li title="كتب و إصدارات" ng-class="vm.getClass(['/books', '/books/new'])">
                 <a href="#/books">كتب</a>
               </li>
               <li title="مقالات" ng-class="vm.getClass(['/articles', '/articles/new'])">
@@ -141,6 +141,7 @@
         <script src="scripts/controllers/articles.js"></script>
         <script src="scripts/controllers/article.js"></script>
         <script src="scripts/controllers/books.js"></script>
+        <script src="scripts/controllers/books_new.js"></script>
         <!-- endbuild -->
 
     <link href="https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css">

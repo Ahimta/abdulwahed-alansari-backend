@@ -8,5 +8,21 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('BooksCtrl', function () {
+  .controller('BooksCtrl', function ($firebaseArray) {
+
+    var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/books');
+    var books = this.books = $firebaseArray(ref);
+
+    var editing = null;
+
+    this.isEditing = function (bookId) { return editing === bookId; };
+
+    this.edit = function (bookId) { editing = bookId; };
+
+    var cancel = this.cancel = function () { editing = null; };
+
+    this.update = function (book) {
+      cancel();
+      books.$save(book);
+    };
   });
