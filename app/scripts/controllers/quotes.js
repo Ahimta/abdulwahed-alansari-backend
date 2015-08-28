@@ -8,10 +8,9 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('QuotesCtrl', function ($routeParams, $location, $firebaseArray) {
+  .controller('QuotesCtrl', function ($routeParams, $location, $firebaseArray, FIREBASE_REF) {
 
-    var ref = new Firebase("https://abdulahed-alansari.firebaseio.com/quotes");
-    var quotes = this.quotes = $firebaseArray(ref);
+    var quotes = this.quotes = $firebaseArray(FIREBASE_REF.child('quotes'));
 
     if ($routeParams.action === 'new') { $location.hash('newQuoteButton'); }
 

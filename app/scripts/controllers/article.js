@@ -8,10 +8,9 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticleCtrl', function ($routeParams, $location, $firebaseObject) {
+  .controller('ArticleCtrl', function ($routeParams, $location, $firebaseObject, FIREBASE_REF) {
 
-    var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/articles/' + $routeParams.id);
-    var article = $firebaseObject(ref);
+    var article = $firebaseObject(FIREBASE_REF.child('articles/' + $routeParams.id));
     var scope = this;
 
     article.$loaded().then(function () { scope.article = article; });

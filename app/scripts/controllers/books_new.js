@@ -8,9 +8,9 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('BooksNewCtrl', function ($location) {
+  .controller('BooksNewCtrl', function ($location, FIREBASE_REF) {
 
-    var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/books');
+    var ref = FIREBASE_REF.child('books');
 
     this.create = function (book) {
       ref.push(book);

@@ -8,10 +8,9 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('BooksCtrl', function ($firebaseArray) {
+  .controller('BooksCtrl', function ($firebaseArray, FIREBASE_REF) {
 
-    var ref = new Firebase('https://abdulahed-alansari.firebaseio.com/books');
-    var books = this.books = $firebaseArray(ref);
+    var books = this.books = $firebaseArray(FIREBASE_REF.child('books'));
 
     var editing = null;
 
