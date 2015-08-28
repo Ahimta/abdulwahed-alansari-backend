@@ -27,39 +27,5 @@
 <hr>
 
 <footer class="container">
-  <button type="button" class="btn btn-success btn-lg btn-block"
-          id="newArticleButton"
-          data-toggle="modal" data-target="#newArticleModal">إضافة مقال</button>
+  <a href="#/articles/new" class="btn btn-success btn-lg btn-block">إضافة مقال</a>
 </footer>
-
-<form ng-submit="articlesCtrl.create(article)" name="createArticleForm" dir="rtl">
-  <div class="modal fade" id="newArticleModal" tabindex="-1" role="dialog" aria-labelledby="newArticleModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="إغلاق">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title text-center" id="newArticleModalLabel">إضافة مقال</h4>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="articleTitle">العنوان</label>
-            <input type="text" ng-model="article.title" name="articleTitle" class="form-control" id="articleTitle"
-                   required autofocus>
-          </div>
-          <div class="form-group">
-            <label for="articleBody">المحتوى</label>
-            <textarea id="articleBody" class="form-control" name="articleBody"
-                      ng-model="article.body" required msd-elastic></textarea>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <input type="submit" class="btn btn-success" value="إضافة مقال"
-                 ng-disabled="!createArticleForm.$valid">
-          <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>

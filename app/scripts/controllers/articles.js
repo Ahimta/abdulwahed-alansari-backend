@@ -8,18 +8,7 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticlesCtrl', function ($routeParams, $location, $firebaseArray, FIREBASE_REF) {
+  .controller('ArticlesCtrl', function ($firebaseArray, FIREBASE_REF) {
 
-    if ($routeParams.action === 'new') { $location.hash('newArticleButton'); }
-
-    var articles = this.articles = $firebaseArray(FIREBASE_REF.child('articles'));
-
-    angular.element('#newArticleModal').on('shown.bs.modal', function () { angular.element('#articleTitle').focus(); });
-
-    this.create = function (article) {
-      articles.$add(article);
-      article.title = '';
-      article.body = '';
-      angular.element('#newArticleModal').modal('hide');
-    };
+    this.articles = $firebaseArray(FIREBASE_REF.child('articles'));
   });
