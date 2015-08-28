@@ -1,21 +1,19 @@
 <header class="page-header">
-  <header>
-    <h1 class="text-center" dir="rtl" ng-bind="vm.article.title" ng-hide="vm.isEditing()"></h1>
-    <div class="form-group container" dir="rtl" ng-show="vm.isEditing()">
-      <label class="sr-only" dir="rtl" for="articleTitle">العنوان</label>
-      <input type="text" class="form-control" dir="rtl" id="articleTitle" name="articleTitle"
-             ng-model="vm.article.title" placeholder="العنوان" autofocus required>
-    </div>
-  </header>
+  <h1 class="text-center" dir="rtl" ng-bind="vm.article.title" ng-hide="vm.isEditing()"></h1>
+  <div class="form-group container" dir="rtl" ng-show="vm.isEditing()">
+    <label class="sr-only" dir="rtl" for="articleTitle">العنوان</label>
+    <input type="text" class="form-control" dir="rtl" id="articleTitle" name="articleTitle"
+           ng-model="vm.article.title" placeholder="العنوان" autofocus required>
+  </div>
 </header>
 
-<div class="container" dir="rtl">
+<nav class="container" dir="rtl">
   <ol class="breadcrumb">
     <li><a href="#/">الصفحة الرئيسية</a></li>
     <li><a href="#/articles">مقالات</a></li>
     <li class="active" ng-bind="vm.article.title"></li>
   </ol>
-</div>
+</nav>
 
 <article>
   <div class="text-right container">

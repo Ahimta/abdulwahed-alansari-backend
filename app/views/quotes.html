@@ -1,13 +1,13 @@
-<section class="page-header text-center">
-  <h1>مقتطفات</h1>
-</section>
+<header class="page-header">
+  <h1 class="text-center" dir="rtl">مقتطفات</h1>
+</header>
 
-<div class="container" dir="rtl">
+<nav class="container" dir="rtl">
   <ol class="breadcrumb">
     <li><a href="#/">الصفحة الرئيسية</a></li>
     <li class="active">مقتطفات</li>
   </ol>
-</div>
+</nav>
 
 <section class="container text-center">
   <article class="panel panel-default" ng-repeat="quote in quotesCtrl.quotes">
@@ -32,11 +32,11 @@
 
 <hr>
 
-<section class="container">
+<footer class="container">
   <button type="button" class="btn btn-success btn-lg btn-block"
           id="newQuoteButton"
           data-toggle="modal" data-target="#newQuoteModal">إضافة مقتطف</button>
-</section>
+</footer>
 
 <form ng-submit="quotesCtrl.create(quote)" name="createQuoteForm" dir="rtl">
   <div class="modal fade" id="newQuoteModal" tabindex="-1" role="dialog" aria-labelledby="newQuoteModalLabel">

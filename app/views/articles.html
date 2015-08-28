@@ -1,38 +1,36 @@
-<section class="page-header text-center">
-  <h1>مقالات</h1>
-</section>
+<header class="page-header">
+  <h1 class="text-center" dir="rtl">مقالات</h1>
+</header>
 
-<div class="container" dir="rtl">
+<nav class="container" dir="rtl">
   <ol class="breadcrumb">
     <li><a href="#/">الصفحة الرئيسية</a></li>
     <li class="active">مقالات</li>
   </ol>
-</div>
+</nav>
 
-<section class="container text-right">
-  <div ng-repeat="article in articlesCtrl.articles">
-    <article class="panel panel-default">
-      <div class="panel-body text-center">
-        <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
+<section class="container">
+  <article class="panel panel-default" ng-repeat="article in articlesCtrl.articles">
+    <div class="panel-body text-center">
+      <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
+    </div>
+    <footer class="panel-footer text-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-danger"
+                ng-click="articlesCtrl.articles.$remove(article)">حذف</button>
+        <a ng-href="#/article/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
       </div>
-      <footer class="panel-footer text-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-danger"
-                  ng-click="articlesCtrl.articles.$remove(article)">حذف</button>
-          <a ng-href="#/article/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
-        </div>
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
 </section>
 
 <hr>
 
-<section class="container">
+<footer class="container">
   <button type="button" class="btn btn-success btn-lg btn-block"
           id="newArticleButton"
           data-toggle="modal" data-target="#newArticleModal">إضافة مقال</button>
-</section>
+</footer>
 
 <form ng-submit="articlesCtrl.create(article)" name="createArticleForm" dir="rtl">
   <div class="modal fade" id="newArticleModal" tabindex="-1" role="dialog" aria-labelledby="newArticleModalLabel">
