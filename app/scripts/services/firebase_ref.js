@@ -8,4 +8,4 @@
  * Constant in the abdulwahedAlansariFrontendApp.
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .constant('FIREBASE_REF', new Firebase('https://abdulahed-alansari.firebaseio.com'));
+  .constant('FIREBASE_REF', new Firebase('https://abdulwahed-alansari.firebaseio.com'));
