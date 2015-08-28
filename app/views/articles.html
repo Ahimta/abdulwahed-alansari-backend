@@ -10,14 +10,13 @@
 </nav>
 
 <section class="container">
-  <article class="panel panel-default" ng-repeat="article in articlesCtrl.articles">
+  <article class="panel panel-default" ng-repeat="article in vm.articles">
     <div class="panel-body text-center">
       <a ng-href="#/article/{{article.$id}}" dir="rtl" ng-bind="article.title"></a>
     </div>
     <footer class="panel-footer text-center">
       <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-danger"
-                ng-click="articlesCtrl.articles.$remove(article)">حذف</button>
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.articles.$remove(article)">حذف</button>
         <a ng-href="#/article/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
       </div>
     </footer>

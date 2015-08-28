@@ -30,17 +30,17 @@ angular
       .when('/', {
         templateUrl: 'views/homepage.html',
         controller: 'HomepageCtrl',
-        controllerAs: 'homepageCtrl'
+        controllerAs: 'vm'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'aboutCtrl'
+        controllerAs: 'vm'
       })
       .when('/quotes', {
         templateUrl: 'views/quotes.html',
         controller: 'QuotesCtrl',
-        controllerAs: 'quotesCtrl'
+        controllerAs: 'vm'
       })
       .when('/quotes/new', {
         templateUrl: 'views/quotes_new.html',
@@ -50,7 +50,7 @@ angular
       .when('/articles', {
         templateUrl: 'views/articles.html',
         controller: 'ArticlesCtrl',
-        controllerAs: 'articlesCtrl'
+        controllerAs: 'vm'
       })
       .when('/articles/new', {
         templateUrl: 'views/articles_new.html',

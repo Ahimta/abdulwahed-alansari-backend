@@ -10,21 +10,21 @@
 </nav>
 
 <section class="container text-center">
-  <article class="panel panel-default" ng-repeat="quote in quotesCtrl.quotes">
+  <article class="panel panel-default" ng-repeat="quote in vm.quotes">
     <div class="panel-body" dir="rtl">
-      <pre ng-bind="quote.text" ng-hide="quotesCtrl.isEditing(quote.$id)"></pre>
-      <div class="form-group" ng-show="quotesCtrl.isEditing(quote.$id)">
+      <pre ng-bind="quote.text" ng-hide="vm.isEditing(quote.$id)"></pre>
+      <div class="form-group" ng-show="vm.isEditing(quote.$id)">
         <textarea dir="rtl" ng-model="quote.text" class="form-control" autofocus required msd-elastic></textarea>
       </div>
     </div>
     <div class="panel-footer">
-      <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-show="quotesCtrl.isEditing(quote.$id)">
-        <button type="button" class="btn btn-sm btn-danger" ng-click="quotesCtrl.quotes.$remove(quote)">حذف</button>
-        <button type="button" class="btn btn-sm btn-primary" ng-click="quotesCtrl.update(quote)">حفظ</button>
+      <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-show="vm.isEditing(quote.$id)">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.quotes.$remove(quote)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.update(quote)">حفظ</button>
       </div>
-      <div class="btn-group" role="group" aria-label="إدارة مقتطف" ng-hide="quotesCtrl.isEditing(quote.$id)">
-        <button type="button" class="btn btn-sm btn-danger" ng-click="quotesCtrl.quotes.$remove(quote)">حذف</button>
-        <button type="button" class="btn btn-sm btn-primary" ng-click="quotesCtrl.edit(quote.$id)">تعديل</button>
+      <div class="btn-group" role="group" aria-label="إدارة مقتطف" ng-hide="vm.isEditing(quote.$id)">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.quotes.$remove(quote)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.edit(quote.$id)">تعديل</button>
       </div>
     </div>
   </article>
