@@ -37,10 +37,15 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'aboutCtrl'
       })
-      .when('/quotes/:action?', {
+      .when('/quotes', {
         templateUrl: 'views/quotes.html',
         controller: 'QuotesCtrl',
         controllerAs: 'quotesCtrl'
+      })
+      .when('/quotes/new', {
+        templateUrl: 'views/quotes_new.html',
+        controller: 'QuotesNewCtrl',
+        controllerAs: 'vm'
       })
       .when('/articles', {
         templateUrl: 'views/articles.html',

@@ -1,0 +1,22 @@
+<header class="page-header">
+  <h1 class="text-center" dir="rtl">إضافة مقتطف</h1>
+</header>
+
+<nav class="container" dir="rtl">
+  <ol class="breadcrumb">
+    <li><a href="#/">الصفحة الرئيسية</a></li>
+    <li><a href="#/quotes">مقتطفات</a></li>
+    <li class="active">إضافة مقتطف</li>
+  </ol>
+</nav>
+
+<section class="container">
+  <form name="quoteForm" ng-submit="vm.create(quote)">
+    <div class="form-group" dir="rtl">
+      <label for="quoteText">المحتوى</label>
+      <textarea class="form-control" id="quoteText" ng-model="quote.text" required msd-elastic></textarea>
+    </div>
+    <button type="submit" class="btn btn-block btn-lg btn-success"
+            ng-disabled="quoteForm.$invalid">إضافة المقتطف</button>
+  </form>
+</section>
