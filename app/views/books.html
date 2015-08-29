@@ -40,7 +40,7 @@
         </tr>
       </tbody>
     </table>
-    <footer class="panel-footer text-center">
+    <footer class="panel-footer text-center" ng-show="vm.isAdmin()">
       <div class="btn-group" ng-hide="vm.isEditing(book.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.books.$remove(book)">حذف</button>
         <button type="button" class="btn btn-sm btn-primary" ng-click="vm.edit(book.$id)">تعديل</button>
@@ -53,8 +53,8 @@
   </article>
 </section>
 
-<hr>
+<hr ng-show="vm.isAdmin()">
 
-<footer class="container">
+<footer class="container" ng-show="vm.isAdmin()">
   <a href="#/books/new" class="btn btn-lg btn-block btn-success">إضافة كتاب</a>
 </footer>

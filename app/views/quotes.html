@@ -17,7 +17,7 @@
         <textarea dir="rtl" ng-model="quote.text" class="form-control" autofocus required msd-elastic></textarea>
       </div>
     </div>
-    <div class="panel-footer">
+    <div class="panel-footer" ng-show="vm.isAdmin()">
       <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-show="vm.isEditing(quote.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.quotes.$remove(quote)">حذف</button>
         <button type="button" class="btn btn-sm btn-primary" ng-click="vm.update(quote)">حفظ</button>
@@ -30,8 +30,8 @@
   </article>
 </section>
 
-<hr>
+<hr ng-show="vm.isAdmin()">
 
-<footer class="container">
+<footer class="container" ng-show="vm.isAdmin()">
   <a href="#/quotes/new" class="btn btn-success btn-lg btn-block">إضافة مقتطف</a>
 </footer>

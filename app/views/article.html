@@ -24,7 +24,7 @@
                 required msd-elastic></textarea>
     </div>
   </div>
-  <footer class="text-center">
+  <footer class="text-center" ng-show="vm.isAdmin()">
     <div class="btn-group" ng-hide="vm.isEditing()">
       <button type="button" class="btn btn-sm btn-danger" ng-click="vm.destroy()">حذف</button>
       <a ng-href="#/article/{{vm.article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>

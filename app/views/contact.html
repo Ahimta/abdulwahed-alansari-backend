@@ -9,7 +9,7 @@
   </ol>
 </nav>
 
-<section class="container">
+<section class="container" ng-show="vm.isVisitor()">
   <form name="contactForm" ng-submit="vm.create(contact)">
     <div class="form-group" dir="rtl">
       <label for="contactFullname">الاسم الكامل</label>

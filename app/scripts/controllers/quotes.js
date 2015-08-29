@@ -8,9 +8,12 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('QuotesCtrl', function ($firebaseArray, FIREBASE_REF) {
+  .controller('QuotesCtrl', function ($firebaseArray, FIREBASE_REF, UserService) {
 
     var quotes = this.quotes = $firebaseArray(FIREBASE_REF.child('quotes'));
+
+    this.isVisitor = UserService.isVisitor;
+    this.isAdmin   = UserService.isAdmin;
 
     var editing = null;
 

@@ -23,7 +23,7 @@
 
     <!-- Add your site or application content here -->
     <header style="margin-bottom: 7em;">
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarCtrl as vm">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" aria-expanded="false"
@@ -36,10 +36,18 @@
             <a class="navbar-brand" href="#/" title="الصفحة الرئيسية">
               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
             </a>
+            <ul class="nav navbar-nav navbar-left">
+              <div class="btn-group">
+                <button type="button" class="btn btn-danger navbar-btn"
+                        ng-class="{active: vm.isAdmin()}" ng-click="vm.setAdmin()">مسؤول</button>
+                <button type="button" class="btn btn-primary navbar-btn"
+                        ng-class="{active: vm.isVisitor()}" ng-click="vm.setVisitor()">زائر</button>
+              </div>
+            </ul>
           </div>
-          <div class="collapse navbar-collapse" id="navbar" ng-controller="NavbarCtrl as vm">
+          <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
+              <li class="dropdown" ng-show="vm.isAdmin()">
                 <a href="#" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button"
                    aria-haspopup="true" aria-expanded="false">
                    <span class="caret"></span>
@@ -136,6 +144,7 @@
         <script src="scripts/controllers/articles_new.js"></script>
         <script src="scripts/controllers/quotes_new.js"></script>
         <script src="scripts/controllers/contact.js"></script>
+        <script src="scripts/services/user_service.js"></script>
         <!-- endbuild -->
 
     <link href="https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css">

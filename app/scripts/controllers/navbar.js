@@ -8,7 +8,7 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('NavbarCtrl', function ($location) {
+  .controller('NavbarCtrl', function ($location, UserService) {
 
     function isActive (urlOrUrls) {
       var path = $location.path();
@@ -16,4 +16,10 @@ angular.module('abdulwahedAlansariFrontendApp')
     }
 
     this.getClass = function (urlOrUrls) { return isActive(urlOrUrls) ? 'active' : null; };
+
+    this.setVisitor = UserService.setVisitor;
+    this.setAdmin   = UserService.setAdmin;
+
+    this.isVisitor = UserService.isVisitor;
+    this.isAdmin   = UserService.isAdmin;
   });
