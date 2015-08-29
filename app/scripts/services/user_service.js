@@ -16,7 +16,11 @@ angular.module('abdulwahedAlansariFrontendApp')
       else      { return $window.localStorage.getItem('userRole');       }
     }
 
-    this.isVisitor = function () { return userRole() === 'visitor'; };
+    this.isVisitor = function () {
+      var role = userRole();
+      return (!role || role === 'visitor');
+    };
+
     this.isAdmin = function () { return userRole() === 'admin'; };
 
     this.setVisitor = function () { return userRole('visitor'); };
