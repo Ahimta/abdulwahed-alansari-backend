@@ -1,0 +1,32 @@
+<header class="page-header">
+  <h1 class="text-center" dir="rtl">راسلني</h1>
+</header>
+
+<nav class="container" dir="rtl">
+  <ol class="breadcrumb">
+    <li><a href="#/">الصفحة الرئيسية</a></li>
+    <li class="active">راسلني</li>
+  </ol>
+</nav>
+
+<section class="container">
+  <form name="contactForm" ng-submit="vm.create(contact)">
+    <div class="form-group" dir="rtl">
+      <label for="contactFullname">الاسم الكامل</label>
+      <input type="text" class="form-control" id="contactFullname" autofocus required ng-model="contact.name">
+    </div>
+    <div class="form-group" dir="rtl">
+      <label for="contactEmail">البريد الإلكتروني</label>
+      <input type="email" class="form-control" id="contactEmail" required ng-model="contact.email">
+    </div>
+    <div class="form-group" dir="rtl">
+      <label for="contactTitle">العنوان</label>
+      <input type="text" class="form-control" id="contactTitle" required ng-model="contact.title">
+    </div>
+    <div class="form-group" dir="rtl">
+      <label for="contactBody">المحتوى</label>
+      <textarea class="form-control" id="contactBody" ng-model="contact.body" required msd-elastic></textarea>
+    </div>
+    <button type="submit" class="btn btn-block btn-lg btn-success" ng-disabled="contactForm.$invalid">راسلني</button>
+  </form>
+</section>

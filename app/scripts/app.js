@@ -72,6 +72,11 @@ angular
         controller: 'BooksNewCtrl',
         controllerAs: 'vm'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });

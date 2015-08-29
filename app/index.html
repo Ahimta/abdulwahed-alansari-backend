@@ -63,27 +63,17 @@
                   </li>
                 </ul>
               </li>
-              <li class="disabled" title="من أنا" ng-class="vm.getClass('/about')">
-                <a href="#/about">من أنا</a>
-              </li>
-              <li class="disabled" title="راسلني" ng-class="vm.getClass('/contact')">
-                <a href="#/contact">راسلني</a>
-              </li>
-              <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass(['/media', '/media/new'])">
+              <li class="disabled" title="من أنا" ng-class="vm.getClass('/about')"><a href="#/about">من أنا</a></li>
+              <li title="راسلني" ng-class="vm.getClass('/contact')"><a href="#/contact">راسلني</a></li>
+              <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media')">
                 <a href="#/media">وسائط</a>
               </li>
-              <li class="disabled" title="مناسبات و فعاليات" ng-class="vm.getClass(['/activities', '/activities/new'])">
+              <li class="disabled" title="مناسبات و فعاليات" ng-class="vm.getClass('/activities')">
                 <a href="#/activities">فعاليات</a>
               </li>
-              <li title="كتب و إصدارات" ng-class="vm.getClass('/books')">
-                <a href="#/books">كتب</a>
-              </li>
-              <li title="مقالات" ng-class="vm.getClass('/articles')">
-                <a href="#/articles">مقالات</a>
-              </li>
-              <li title="مقتطفات" ng-class="vm.getClass('/quotes')">
-                <a href="#/quotes">مقتطفات</a>
-              </li>
+              <li title="كتب و إصدارات" ng-class="vm.getClass('/books')"><a href="#/books">كتب</a></li>
+              <li title="مقالات" ng-class="vm.getClass('/articles')"><a href="#/articles">مقالات</a></li>
+              <li title="مقتطفات" ng-class="vm.getClass('/quotes')"><a href="#/quotes">مقتطفات</a></li>
             </ul>
           </div>
         </div>
@@ -145,6 +135,7 @@
         <script src="scripts/services/firebase_ref.js"></script>
         <script src="scripts/controllers/articles_new.js"></script>
         <script src="scripts/controllers/quotes_new.js"></script>
+        <script src="scripts/controllers/contact.js"></script>
         <!-- endbuild -->
 
     <link href="https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css">
