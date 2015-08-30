@@ -1,7 +1,7 @@
 #!/bin/env sh
 
 git branch -D gh-pages
-git checkout -b gh-pages master
+git checkout -b gh-pages HEAD
 
 grunt build
 
@@ -13,5 +13,3 @@ git add .
 
 git commit -am "Deploy to gh-pages"
 git push --force --quiet "https://${GH_TOKEN}@github.com/Ahimta/abdulwahed-alansari-frontend.git" `git subtree split --prefix dist gh-pages`:gh-pages > /dev/null 2>&1
-
-git checkout master
