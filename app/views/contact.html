@@ -9,11 +9,27 @@
   </ol>
 </nav>
 
+<section class="container" ng-show="vm.isAdmin()">
+  <article class="panel panel-primary" ng-repeat="contact in vm.contacts">
+    <header class="panel-heading text-center"><span dir="rtl" ng-bind="contact.title"></span></header>
+    <div class="panel-body"><pre dir="rtl" ng-bind="contact.body"></pre></div>
+    <table class="table">
+      <tbody>
+        <tr><td class="text-center" ng-bind="contact.fullname"></td><th class="text-center">الاسم الكامل</th></tr>
+        <tr><td class="text-center" ng-bind="contact.email"></td><th class="text-center">البريد الإلكتروني</th></tr>
+      </tbody>
+    </table>
+    <footer class="panel-footer text-center">
+      <button type="button" class="btn btn-sm btn-danger" ng-click="vm.contacts.$remove(contact)">حذف</button>
+    </footer>
+  </article>
+</section>
+
 <section class="container" ng-show="vm.isVisitor()">
   <form name="contactForm" ng-submit="vm.create(contact)">
     <div class="form-group" dir="rtl">
       <label for="contactFullname">الاسم الكامل</label>
-      <input type="text" class="form-control" id="contactFullname" autofocus required ng-model="contact.name">
+      <input type="text" class="form-control" id="contactFullname" autofocus required ng-model="contact.fullname">
     </div>
     <div class="form-group" dir="rtl">
       <label for="contactEmail">البريد الإلكتروني</label>

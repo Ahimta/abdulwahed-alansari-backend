@@ -12,7 +12,7 @@ angular.module('abdulwahedAlansariFrontendApp')
 
     var ref = FIREBASE_REF.child('contacts');
 
-    this.articles = $firebaseArray(ref);
+    this.contacts = $firebaseArray(ref);
 
     this.isVisitor = UserService.isVisitor;
     this.isAdmin   = UserService.isAdmin;
