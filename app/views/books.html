@@ -17,9 +17,11 @@
              ng-model="book.title" ng-show="vm.isEditing(book.$id)">
     </header>
     <div class="panel-body">
-      <pre dir="rtl" ng-bind="book.description" ng-hide="vm.isEditing(book.$id)"></pre>
-      <textarea class="form-control" dir="rtl" placeholder="الوصف"
-                ng-model="book.description" ng-show="vm.isEditing(book.$id)" msd-elastic></textarea>
+      <div dir="rtl" ng-bind-html="book.description" ng-show="vm.isVisitor()"></div>
+      <div ng-show="vm.isAdmin()">
+        <textarea class="form-control" dir="rtl" placeholder="الوصف"
+                  ng-model="book.description" contenteditable="true" ckeditor></textarea>
+      </div>
     </div>
     <table class="table">
       <tbody>

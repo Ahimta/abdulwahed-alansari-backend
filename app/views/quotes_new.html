@@ -14,7 +14,7 @@
   <form name="quoteForm" ng-submit="vm.create(quote)">
     <div class="form-group" dir="rtl">
       <label for="quoteText">المحتوى</label>
-      <textarea class="form-control" id="quoteText" ng-model="quote.text" required msd-elastic></textarea>
+      <textarea class="form-control" id="quoteText" ng-model="quote.text" required ckeditor></textarea>
     </div>
     <button type="submit" class="btn btn-block btn-lg btn-success"
             ng-disabled="quoteForm.$invalid">إضافة المقتطف</button>
