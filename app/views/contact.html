@@ -12,7 +12,7 @@
 <section class="container" ng-show="vm.isAdmin()">
   <article class="panel panel-primary" ng-repeat="contact in vm.contacts">
     <header class="panel-heading text-center"><span dir="rtl" ng-bind="contact.title"></span></header>
-    <div class="panel-body"><pre dir="rtl" ng-bind="contact.body"></pre></div>
+    <div class="panel-body" dir="rtl" ng-bind-html="contact.body"></div>
     <table class="table">
       <tbody>
         <tr><td class="text-center" ng-bind="contact.fullname"></td><th class="text-center">الاسم الكامل</th></tr>
@@ -41,7 +41,7 @@
     </div>
     <div class="form-group" dir="rtl">
       <label for="contactBody">المحتوى</label>
-      <textarea class="form-control" id="contactBody" ng-model="contact.body" required msd-elastic></textarea>
+      <textarea class="form-control" id="contactBody" ng-model="contact.body" required ckeditor></textarea>
     </div>
     <button type="submit" class="btn btn-block btn-lg btn-success" ng-disabled="contactForm.$invalid">راسلني</button>
   </form>

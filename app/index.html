@@ -127,6 +127,7 @@
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="bower_components/angular-elastic/elastic.js"></script>
+    <script src="bower_components/angular-ckeditor/angular-ckeditor.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -146,6 +147,12 @@
         <script src="scripts/controllers/contact.js"></script>
         <script src="scripts/services/user_service.js"></script>
         <!-- endbuild -->
+
+    <script src="//cdn.ckeditor.com/4.4.5.1/full-all/ckeditor.js"></script>
+    <script>
+      CKEDITOR.config.defaultLanguage = 'ar';
+      CKEDITOR.config.language = 'ar';
+    </script>
 
     <script>
       $(".navbar-collapse a:not(.dropdown-toggle), .navbar-brand").click(function () {

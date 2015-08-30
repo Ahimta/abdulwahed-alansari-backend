@@ -20,7 +20,8 @@ angular
     'ngTouch',
     'firebase',
     'angular-loading-bar',
-    'monospaced.elastic'
+    'monospaced.elastic',
+    'ckeditor'
   ])
   .config(function (msdElasticConfig) {
     msdElasticConfig.append = '\n';
