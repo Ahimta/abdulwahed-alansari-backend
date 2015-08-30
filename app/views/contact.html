@@ -16,7 +16,12 @@
     <table class="table">
       <tbody>
         <tr><td class="text-center" ng-bind="contact.fullname"></td><th class="text-center">الاسم الكامل</th></tr>
-        <tr><td class="text-center" ng-bind="contact.email"></td><th class="text-center">البريد الإلكتروني</th></tr>
+        <tr>
+          <td class="text-center">
+            <a target="_blank" ng-href="mailto:{{contact.email}}" ng-bind="contact.email"></a>
+          </td>
+          <th class="text-center">البريد الإلكتروني</th>
+        </tr>
       </tbody>
     </table>
     <footer class="panel-footer text-center">
