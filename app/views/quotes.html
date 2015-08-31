@@ -11,18 +11,20 @@
 
 <section class="container text-center">
   <article class="panel panel-default" ng-repeat="quote in vm.quotes">
-    <div class="panel-body" dir="rtl">
-      <div dir="rtl" ng-bind-html="quote.text" ng-show="vm.isVisitor()"></div>
-      <div ng-show="vm.isAdmin()">
-        <textarea class="form-control" dir="rtl" autofocus required
-                  ng-model="quote.text" contenteditable="true" ckeditor>
-        </textarea>
-      </div>
+    <div class="panel-body">
+      <pre dir="rtl" ng-bind="quote.text" ng-hide="vm.isEditing(quote.$id)"></pre>
+      <textarea class="form-control" dir="rtl" autofocus required
+                ng-show="vm.isEditing(quote.$id)" ng-model="quote.text" msd-elastic>
+      </textarea>
     </div>
     <div class="panel-footer" ng-show="vm.isAdmin()">
-      <div aria-label="إدارة مقتطف" class="btn-group" role="group">
+      <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-show="vm.isEditing(quote.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.quotes.$remove(quote)">حذف</button>
-        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.quotes.$save(quote)">حفظ</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.update(quote)">حفظ</button>
+      </div>
+      <div aria-label="إدارة مقتطف" class="btn-group" role="group" ng-hide="vm.isEditing(quote.$id)">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.quotes.$remove(quote)">حذف</button>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.edit(quote.$id)">تعديل</button>
       </div>
     </div>
   </article>
