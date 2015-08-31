@@ -8,14 +8,14 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('AboutCtrl', function ($firebaseObject, FIREBASE_REF, UserService) {
+  .controller('AboutCtrl', function ($window, $firebaseObject, FIREBASE_REF, UserService) {
 
     var aboutHTMLObject = $firebaseObject(FIREBASE_REF.child('about'));
     var scope = this;
 
     aboutHTMLObject.$loaded().then(function () { scope.aboutHTML = aboutHTMLObject.$value; });
 
-    this.isEnabled = CKEDITOR.env.isCompatible;
+    this.isEnabled = $window.CKEDITOR && $window.CKEDITOR.env.isCompatible;
 
     this.isVisitor = UserService.isVisitor;
     this.isAdmin   = UserService.isAdmin;
