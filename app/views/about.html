@@ -1,1 +1,27 @@
-<p>This is the about view.</p>
+<header class="page-header">
+  <h1 class="text-center" dir="rtl">من أنا</h1>
+</header>
+
+<nav class="container" dir="rtl">
+  <ol class="breadcrumb">
+    <li><a href="#/">الصفحة الرئيسية</a></li>
+    <li class="active">من أنا</li>
+  </ol>
+</nav>
+
+<section class="container" ng-show="vm.isAdmin()">
+  <form name="aboutForm" ng-if="vm.isEnabled" ng-submit="vm.save()">
+    <div class="form-group">
+      <textarea class="form-control" dir="rtl" autofocus required ng-model="$parent.vm.aboutHTML" ckeditor></textarea>
+    </div>
+    <button type="submit" class="btn btn-block btn-lg btn-primary"
+            ng-disabled="aboutForm.$invalid || aboutForm.$pristine">حفظ</button>
+  </form>
+  <p class="text-center" dir="rtl" ng-hide="vm.isEnabled">
+    لا يمكن تعديل هذه الصفحة باستخدام الجهاز أو المتصفح المستخدم حالياً.
+  </p>
+</section>
+
+<section class="container" ng-show="vm.isVisitor()">
+  <div dir="rtl" ng-bind-html="vm.aboutHTML"></div>
+</section>

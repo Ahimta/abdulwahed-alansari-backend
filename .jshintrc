@@ -11,6 +11,7 @@
   "undef": true,
   "unused": true,
   "globals": {
+    "CKEDITOR": false,
     "Firebase": false,
     "angular": false
   }
