@@ -21,7 +21,8 @@ angular
     'firebase',
     'angular-loading-bar',
     'monospaced.elastic',
-    'ckeditor'
+    'ckeditor',
+    'imgurUpload'
   ])
   .config(function (msdElasticConfig) {
     msdElasticConfig.append = '\n';

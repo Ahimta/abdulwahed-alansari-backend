@@ -16,14 +16,25 @@
 </nav>
 
 <article>
-  <div class="text-right container">
-    <pre dir="rtl" ng-bind="vm.article.body" ng-hide="vm.isEditing()"></pre>
+  <section class="container">
     <div class="form-group" dir="rtl" ng-show="vm.isEditing()">
-      <label class="sr-only" dir="rtl" for="articleBody">المحتوى</label>
-      <textarea class="form-control" dir="rtl" id="articleBody" ng-model="vm.article.body" placeholder="المحتوى"
-                required msd-elastic></textarea>
+      <input type="text" class="form-control" dir="rtl" id="articleDescription" placeholder="الخلاصة"
+             ng-model="vm.article.description">
     </div>
-  </div>
+    <div class="thumbnail">
+      <img ng-src="{{vm.article.image.url}}" alt="{{vm.articl.image.name}}"
+           ng-hide="vm.isEditing()" ng-show="vm.article.image">
+      <div class="caption">
+        <pre class="text-right" dir="rtl" ng-bind="vm.article.body" ng-hide="vm.isEditing()"></pre>
+        <div class="form-group" dir="rtl" ng-show="vm.isEditing()">
+          <label class="sr-only" dir="rtl" for="articleBody">المحتوى</label>
+          <textarea class="form-control" dir="rtl" id="articleBody" placeholder="المحتوى" required
+                    ng-model="vm.article.body" msd-elastic>
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </section>
   <footer class="text-center" ng-show="vm.isAdmin()">
     <div class="btn-group" ng-hide="vm.isEditing()">
       <button type="button" class="btn btn-sm btn-danger" ng-click="vm.destroy()">حذف</button>
