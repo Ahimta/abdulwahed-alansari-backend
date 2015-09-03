@@ -8,7 +8,7 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticlesNewCtrl', function ($location, $document, imgurUpload, FIREBASE_REF) {
+  .controller('ArticlesNewCtrl', function ($location, $document, ImageService, FIREBASE_REF) {
 
     var ref = FIREBASE_REF.child('articles');
     var scope = this;
@@ -26,14 +26,13 @@ angular.module('abdulwahedAlansariFrontendApp')
 
       if (file) {
         scope.uploading = true;
-        imgurUpload.setClientId('4c46e8ba7a36fc6');
-        imgurUpload.upload(file).then(
-          function (json) {
-            scope.uploading = false;
-            article.image = {name: file.name, url: json.data.link};
-            createHelper(article);
-          },
-          function (err) { console.err(err); });
+
+        ImageService.upload(file).then(function (image) {
+
+          scope.uploading = false;
+          article.image = image;
+          createHelper(article);
+        });
       }
       else {
         createHelper(article);
