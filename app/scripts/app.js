@@ -22,7 +22,8 @@ angular
     'angular-loading-bar',
     'monospaced.elastic',
     'ckeditor',
-    'imgurUpload'
+    'imgurUpload',
+    'ui.bootstrap'
   ])
   .config(function (msdElasticConfig) {
     msdElasticConfig.append = '\n';

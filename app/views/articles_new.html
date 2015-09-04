@@ -10,7 +10,7 @@
   </ol>
 </nav>
 
-<section class="container">
+<section class="container" ng-hide="vm.progress">
   <form name="articleForm" ng-submit="vm.create(article)">
     <div class="form-group" dir="rtl">
       <label for="articleTitle">العنوان</label>
@@ -31,4 +31,8 @@
     <button type="submit" class="btn btn-block btn-lg btn-success"
             ng-disabled="articleForm.$invalid || vm.uploading">إضافة المقال</button>
   </form>
+</section>
+
+<section class="container" ng-show="vm.progress">
+  <progressbar class="progress-striped" value="vm.progress" type="primary" max="100"></progressbar>
 </section>

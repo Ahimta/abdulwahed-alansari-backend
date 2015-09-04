@@ -32,7 +32,13 @@ angular.module('abdulwahedAlansariFrontendApp')
           scope.uploading = false;
           article.image = image;
           createHelper(article);
+        })
+        .then(null, null, function (progress) {
+
+          scope.progress = progress;
         });
+
+
       }
       else {
         createHelper(article);
