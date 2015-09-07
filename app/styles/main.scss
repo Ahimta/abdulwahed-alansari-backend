@@ -10,4 +10,8 @@ body, pre {
 pre {
   background-color: #FFF;
   border: 0px solid #FFF;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
 }
