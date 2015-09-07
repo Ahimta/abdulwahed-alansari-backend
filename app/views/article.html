@@ -17,10 +17,6 @@
 
 <article>
   <section class="container">
-    <div class="form-group" dir="rtl" ng-show="vm.isEditing()">
-      <input type="text" class="form-control" dir="rtl" id="articleDescription" placeholder="الخلاصة"
-             ng-model="vm.article.description">
-    </div>
     <div class="thumbnail">
       <img ng-src="{{vm.article.image.url}}" alt="{{vm.articl.image.name}}"
            ng-hide="vm.isEditing()" ng-show="vm.article.image">
