@@ -8,15 +8,28 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticleCtrl', function ($routeParams, $location, $firebaseObject, FIREBASE_REF, UserService) {
+  .controller('ArticleCtrl', function ($routeParams, $location, $document, $firebaseObject, FIREBASE_REF, UserService) {
 
     var article = $firebaseObject(FIREBASE_REF.child('articles/' + $routeParams.id));
     var scope = this;
+    var articleTextElement = $document[0].getElementById('articleText');
+
+    function changeFont (increment) {
+      var currentSize = parseInt(articleTextElement.style.fontSize) || 12;
+      articleTextElement.style.fontSize = (currentSize + increment + 'px');
+    }
+
+    this.decreaseFont = function () { changeFont(-2); };
+    this.increaseFont = function () { changeFont(2); };
+
+    this.resetFont = function () { articleTextElement.style.fontSize = '12px'; };
 
     this.isVisitor = UserService.isVisitor;
     this.isAdmin   = UserService.isAdmin;
 
-    article.$loaded().then(function () { scope.article = article; });
+    article.$loaded()
+      .then(function () { scope.article = article; })
+      .then(null, function () { $location.path('/articles'); });
 
     this.isEditing = function () { return $routeParams.action === 'edit'; };
 
