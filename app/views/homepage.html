@@ -2,3 +2,25 @@
   <h1>عبدالواحد الأنصاري</h1>
   <p><a class="btn btn-success btn-lg" href="#/about" role="button">من أنا</a></p>
 </div>
+
+<section class="container">
+  <article class="panel panel-default" ng-repeat="article in vm.articles">
+    <header class="panel-heading text-center">
+      <a dir="rtl" ng-href="#/article/{{article.$id}}" ng-bind="article.title"></a>
+    </header>
+    <div class="panel-body text-center">
+      <section class="thumbnail">
+        <a ng-href="#/article/{{article.$id}}" alt="{{article.image.name}}" ng-show="article.image">
+          <img ng-src="{{article.image.url}}">
+        </a>
+        <div class="caption"><pre class="text-right" dir="rtl">{{ article.body | truncate }}</pre></div>
+      </section>
+    </div>
+    <footer class="panel-footer text-center" ng-show="vm.isAdmin()">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.articles.$remove(article)">حذف</button>
+        <a ng-href="#/article/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>
+      </div>
+    </footer>
+  </article>
+</section>

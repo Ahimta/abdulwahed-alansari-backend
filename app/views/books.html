@@ -10,9 +10,9 @@
 </nav>
 
 <section class="container">
-  <article class="panel panel-primary" ng-repeat="book in vm.books">
+  <article class="panel panel-default" ng-repeat="book in vm.books">
     <header class="panel-heading text-center">
-      <span dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
+      <a dir="rtl" ng-href="{{book.url}}" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></a>
       <input type="text" class="form-control" dir="rtl" autofocus required
              ng-model="book.title" ng-show="vm.isEditing(book.$id)">
     </header>
