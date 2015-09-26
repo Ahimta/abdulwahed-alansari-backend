@@ -10,3 +10,5 @@ git add .
 
 git commit -am "Deploy to gh-pages"
 git push --force origin `git subtree split --prefix dist gh-pages`:gh-pages
+
+git checkout master
