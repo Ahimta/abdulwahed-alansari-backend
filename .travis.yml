@@ -7,7 +7,3 @@ before_script:
   - npm install -g bower grunt-cli
   - gem install compass
   - bower install
-after_script: sh gh-pages.sh
-env:
-  global:
-    secure: vjulCySsyfz8WDp4SgFBLO8zEF9qK8/F663z1XP5aLsWjeEiSza97QqhCpXJzUdWvQ9qM0t0MF1XeVwckgn+7IChhUBSnFDCaRVecn9npXYYBw8G+moq3ZIdF82P/Cv2kSU7MrCIlq78aQMy8ZbysioBjwb83dTP1W2wswW1ZoCig+2SVNDOJQVwWSnyyNfdoTqo8X+dbwYHchhFDgacw/qlaX7LZzqZTQD8rJspICpRd7SbxlCf0Fp7Psqu3hLLx79VIUi1bD8xcyCJ7hBz1Wkq4f3FJ4Dz8EXxWZuiytoTd94Y6kpNcqIGWcyHXJwYwP20zyPJgQB09zrM2//4HMpn5kNjFP8qTmgVnCndslqc3wTmct1DjtklRb5zHrYW/JLmPFKRL4T+GZIfCHf94DOKVuUt8c7Z/K+nRHZxyUTT7nySAMsw6GML5vI/TQwNhtFE4vELwuJoe1aNABsrKCZGISg/T4zdSZvKacDzOym9cfUsmE7dzS/XqPHdz0iSOOeTr98svgJbaMNtq+4t3rowR9W4D/ujPX2GIfbOSpccO7OTNqJ838K+3FkenmMc78tXH9KmeyO2SPlhwCouEOcw/hyD4cbJtwmZvk557xDu5PrqRmsaej+ELQhXn4nuy7+01DY+UdOe/apt4xd17WyN7b2W7++yQ5hUn+xeJ90=
