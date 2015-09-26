@@ -16,9 +16,7 @@
     </header>
     <div class="panel-body text-center">
       <section class="thumbnail">
-        <a ng-href="#/article/{{article.$id}}" alt="{{article.image.name}}" ng-show="article.image">
-          <img ng-src="{{article.image.url}}">
-        </a>
+        <img alt="{{article.image.name}}" ng-show="article.image" ng-src="{{article.image.url}}">
         <div class="caption"><pre class="text-right" dir="rtl">{{ article.body | truncate }}</pre></div>
       </section>
     </div>
