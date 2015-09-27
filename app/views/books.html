@@ -12,9 +12,9 @@
 <section class="container">
   <article class="panel panel-primary" ng-repeat="book in vm.books">
     <header class="panel-heading text-center">
-      <sapn dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
       <input type="text" class="form-control" dir="rtl" autofocus required
              ng-model="book.title" ng-show="vm.isEditing(book.$id)">
+      <sapn dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
     </header>
     <div class="panel-body">
       <pre dir="rtl" ng-bind="book.description" ng-hide="vm.isEditing(book.$id)"></pre>
