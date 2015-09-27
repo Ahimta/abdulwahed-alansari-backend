@@ -16,7 +16,7 @@
              ng-model="book.title" ng-show="vm.isEditing(book.$id)">
       <sapn dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
     </header>
-    <div class="panel-body">
+    <div class="panel-body" ng-show="book.description">
       <pre dir="rtl" ng-bind="book.description" ng-hide="vm.isEditing(book.$id)"></pre>
       <textarea class="form-control" dir="rtl" placeholder="الوصف"
                 ng-show="vm.isEditing(book.$id)"ng-model="book.description" msd-elastic>
