@@ -39,15 +39,32 @@
           </td>
           <th class="text-center">السعر</th>
         </tr>
+        <tr ng-show="vm.isEditing(book.$id)">
+          <td class="text-center"><input type="url" class="form-control" dir="rtl" ng-model="book.downloadUrl"></td>
+          <th class="text-center">الرابط</th>
+        </tr>
       </tbody>
     </table>
+    <footer class="panel-footer text-center" ng-show="vm.isVisitor()">
+      <a target="_blank" class="btn btn-sm btn-success" ng-href="{{book.downloadUrl}}" ng-disabled="!book.downloadUrl">
+        تحميل
+      </a>
+    </footer>
     <footer class="panel-footer text-center" ng-show="vm.isAdmin()">
       <div class="btn-group" ng-hide="vm.isEditing(book.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.books.$remove(book)">حذف</button>
+        <a target="_blank" class="btn btn-sm btn-success"
+           ng-href="{{book.downloadUrl}}" ng-disabled="!book.downloadUrl">
+          تحميل
+        </a>
         <button type="button" class="btn btn-sm btn-primary" ng-click="vm.edit(book.$id)">تعديل</button>
       </div>
       <div class="btn-group" ng-show="vm.isEditing(book.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.books.$remove(book)">حذف</button>
+        <a target="_blank" class="btn btn-sm btn-success"
+           ng-href="{{book.downloadUrl}}" ng-disabled="!book.downloadUrl">
+          تحميل
+        </a>
         <button type="button" class="btn btn-sm btn-primary" ng-click="vm.update(book)">حفظ</button>
       </div>
     </footer>

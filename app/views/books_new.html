@@ -25,6 +25,10 @@
       <input type="number" min="0" step="1" class="form-control" id="bookPrice" ng-model="book.price">
     </div>
     <div class="form-group" dir="rtl">
+      <label for="bookDownloadUrl">الرابط</label>
+      <input type="url" class="form-control" id="bookDownloadUrl" ng-model="book.downloadUrl">
+    </div>
+    <div class="form-group" dir="rtl">
       <label for="bookDescription">الوصف</label>
       <textarea class="form-control" id="bookDescription" ng-model="book.description" msd-elastic></textarea>
     </div>
