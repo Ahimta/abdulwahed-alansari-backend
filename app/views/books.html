@@ -45,12 +45,12 @@
         </tr>
       </tbody>
     </table>
-    <footer class="panel-footer text-center" ng-show="vm.isVisitor()">
+    <footer class="panel-footer text-center" ng-show="mainCtrl.isVisitor()">
       <a target="_blank" class="btn btn-sm btn-success" ng-href="{{book.downloadUrl}}" ng-disabled="!book.downloadUrl">
         تحميل
       </a>
     </footer>
-    <footer class="panel-footer text-center" ng-show="vm.isAdmin()">
+    <footer class="panel-footer text-center" ng-show="mainCtrl.isAdmin()">
       <div class="btn-group" ng-hide="vm.isEditing(book.$id)">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.books.$remove(book)">حذف</button>
         <a target="_blank" class="btn btn-sm btn-success"
@@ -71,8 +71,8 @@
   </article>
 </section>
 
-<hr ng-show="vm.isAdmin()">
+<hr ng-show="mainCtrl.isAdmin()">
 
-<footer class="container" ng-show="vm.isAdmin()">
+<footer class="container" ng-show="mainCtrl.isAdmin()">
   <a href="#/books/new" class="btn btn-lg btn-block btn-success">إضافة إصدار</a>
 </footer>

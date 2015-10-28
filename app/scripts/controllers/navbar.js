@@ -19,7 +19,4 @@ angular.module('abdulwahedAlansariFrontendApp')
 
     this.setVisitor = UserService.setVisitor;
     this.setAdmin   = UserService.setAdmin;
-
-    this.isVisitor = UserService.isVisitor;
-    this.isAdmin   = UserService.isAdmin;
   });

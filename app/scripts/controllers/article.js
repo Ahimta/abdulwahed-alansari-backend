@@ -8,7 +8,7 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticleCtrl', function ($routeParams, $location, $document, $firebaseObject, FIREBASE_REF, UserService) {
+  .controller('ArticleCtrl', function ($routeParams, $location, $document, $firebaseObject, FIREBASE_REF) {
 
     var article = $firebaseObject(FIREBASE_REF.child('articles/' + $routeParams.id));
     var scope = this;
@@ -23,9 +23,6 @@ angular.module('abdulwahedAlansariFrontendApp')
     this.increaseFont = function () { changeFont(2); };
 
     this.resetFont = function () { articleTextElement.style.fontSize = '12px'; };
-
-    this.isVisitor = UserService.isVisitor;
-    this.isAdmin   = UserService.isAdmin;
 
     article.$loaded()
       .then(function () { scope.article = article; })

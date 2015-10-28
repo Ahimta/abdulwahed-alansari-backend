@@ -17,9 +17,6 @@ angular.module('abdulwahedAlansariFrontendApp')
 
     this.isEnabled = $window.CKEDITOR && $window.CKEDITOR.env.isCompatible;
 
-    this.isVisitor = UserService.isVisitor;
-    this.isAdmin   = UserService.isAdmin;
-
     this.save = function () {
 
       var cb = function () { UserService.setVisitor(); };

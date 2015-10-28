@@ -9,7 +9,7 @@
   </ol>
 </nav>
 
-<section class="container" ng-show="vm.isAdmin()">
+<section class="container" ng-show="mainCtrl.isAdmin()">
   <form name="aboutForm" ng-if="vm.isEnabled" ng-submit="vm.save()">
     <div class="form-group">
       <textarea class="form-control" dir="rtl" autofocus required ng-model="$parent.vm.aboutHTML" ckeditor></textarea>
@@ -22,6 +22,6 @@
   </p>
 </section>
 
-<section class="container" ng-show="vm.isVisitor()">
+<section class="container" ng-show="mainCtrl.isVisitor()">
   <div dir="rtl" ng-bind-html="vm.aboutHTML"></div>
 </section>

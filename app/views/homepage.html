@@ -14,7 +14,7 @@
         <div class="caption"><pre class="text-right" dir="rtl">{{ article.body | truncate }}</pre></div>
       </section>
     </div>
-    <footer class="panel-footer text-center" ng-show="vm.isAdmin()">
+    <footer class="panel-footer text-center" ng-show="mainCtrl.isAdmin()">
       <div class="btn-group">
         <button type="button" class="btn btn-sm btn-danger" ng-click="vm.articles.$remove(article)">حذف</button>
         <a ng-href="#/article/{{article.$id}}/edit" class="btn btn-sm btn-primary">تعديل</a>

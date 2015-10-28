@@ -9,7 +9,7 @@
   </ol>
 </nav>
 
-<section class="container" ng-show="vm.isAdmin()">
+<section class="container" ng-show="mainCtrl.isAdmin()">
   <article class="panel panel-primary" ng-repeat="contact in vm.contacts">
     <header class="panel-heading text-center"><span dir="rtl" ng-bind="contact.title"></span></header>
     <div class="panel-body"><pre dir="rtl" ng-bind="contact.body"></pre></div>
@@ -30,7 +30,7 @@
   </article>
 </section>
 
-<section class="container" ng-show="vm.isVisitor()">
+<section class="container" ng-show="mainCtrl.isVisitor()">
   <form name="contactForm" ng-submit="vm.create(contact)">
     <div class="form-group" dir="rtl">
       <label for="contactFullname">الاسم الكامل</label>

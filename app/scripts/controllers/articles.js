@@ -8,10 +8,7 @@
  * Controller of the abdulwahedAlansariFrontendApp
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .controller('ArticlesCtrl', function ($firebaseArray, FIREBASE_REF, UserService) {
+  .controller('ArticlesCtrl', function ($firebaseArray, FIREBASE_REF) {
 
     this.articles = $firebaseArray(FIREBASE_REF.child('articles'));
-
-    this.isVisitor = UserService.isVisitor;
-    this.isAdmin   = UserService.isAdmin;
   });

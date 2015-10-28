@@ -28,81 +28,83 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <header style="margin-bottom: 7em;">
-      <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarCtrl as vm">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" aria-expanded="false"
-                    data-toggle="collapse" data-target="#navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/" title="الصفحة الرئيسية">
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-            </a>
-            <ul class="nav navbar-nav navbar-left">
-              <div class="btn-group">
-                <button type="button" class="btn btn-danger navbar-btn"
-                        ng-class="{active: vm.isAdmin()}" ng-click="vm.setAdmin()">مسؤول</button>
-                <button type="button" class="btn btn-primary navbar-btn"
-                        ng-class="{active: vm.isVisitor()}" ng-click="vm.setVisitor()">زائر</button>
-              </div>
-            </ul>
+    <section ng-controller="MainCtrl as mainCtrl">
+      <header style="margin-bottom: 7em;">
+        <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarCtrl as vm">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" aria-expanded="false"
+                      data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#/" title="الصفحة الرئيسية">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              </a>
+              <ul class="nav navbar-nav navbar-left">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger navbar-btn"
+                          ng-class="{active: mainCtrl.isAdmin()}" ng-click="vm.setAdmin()">مسؤول</button>
+                  <button type="button" class="btn btn-primary navbar-btn"
+                          ng-class="{active: mainCtrl.isVisitor()}" ng-click="vm.setVisitor()">زائر</button>
+                </div>
+              </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" ng-show="mainCtrl.isAdmin()">
+                  <a href="#" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                     aria-haspopup="true" aria-expanded="false">
+                     <span class="caret"></span>
+                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li title="مقتطف" ng-class="vm.getClass('/quotes/new')">
+                      <a href="#/quotes/new" class="text-right">مقتطف</a>
+                    </li>
+                    <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media/new')">
+                      <a href="#/media/new" class="text-right">وسائط</a>
+                    </li>
+                    <li class="disabled" title="فعالية أو مناسبة" ng-class="vm.getClass('/activities/new')">
+                      <a href="#/activities/new" class="text-right">فعالية</a>
+                    </li>
+                    <li title="كتاب أو إصدار" ng-class="vm.getClass('/books/new')">
+                      <a href="#/books/new" class="text-right">إصدار</a>
+                    </li>
+                    <li title="مقال" ng-class="vm.getClass('/articles/new')">
+                      <a href="#/articles/new" class="text-right">مقال</a>
+                    </li>
+                  </ul>
+                </li>
+                <li title="من أنا" ng-class="vm.getClass('/about')"><a href="#/about">من أنا</a></li>
+                <li title="راسلني" ng-class="vm.getClass('/contact')"><a href="#/contact">راسلني</a></li>
+                <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media')">
+                  <a href="#/media">وسائط</a>
+                </li>
+                <li class="disabled" title="مناسبات و فعاليات" ng-class="vm.getClass('/activities')">
+                  <a href="#/activities">فعاليات</a>
+                </li>
+                <li title="كتب و إصدارات" ng-class="vm.getClass('/books')"><a href="#/books">إصدارات</a></li>
+                <li title="مقالات" ng-class="vm.getClass('/articles')"><a href="#/articles">مقالات</a></li>
+                <li title="مقتطفات" ng-class="vm.getClass('/quotes')"><a href="#/quotes">مقتطفات</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown" ng-show="vm.isAdmin()">
-                <a href="#" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                   aria-haspopup="true" aria-expanded="false">
-                   <span class="caret"></span>
-                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li title="مقتطف" ng-class="vm.getClass('/quotes/new')">
-                    <a href="#/quotes/new" class="text-right">مقتطف</a>
-                  </li>
-                  <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media/new')">
-                    <a href="#/media/new" class="text-right">وسائط</a>
-                  </li>
-                  <li class="disabled" title="فعالية أو مناسبة" ng-class="vm.getClass('/activities/new')">
-                    <a href="#/activities/new" class="text-right">فعالية</a>
-                  </li>
-                  <li title="كتاب أو إصدار" ng-class="vm.getClass('/books/new')">
-                    <a href="#/books/new" class="text-right">إصدار</a>
-                  </li>
-                  <li title="مقال" ng-class="vm.getClass('/articles/new')">
-                    <a href="#/articles/new" class="text-right">مقال</a>
-                  </li>
-                </ul>
-              </li>
-              <li title="من أنا" ng-class="vm.getClass('/about')"><a href="#/about">من أنا</a></li>
-              <li title="راسلني" ng-class="vm.getClass('/contact')"><a href="#/contact">راسلني</a></li>
-              <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media')">
-                <a href="#/media">وسائط</a>
-              </li>
-              <li class="disabled" title="مناسبات و فعاليات" ng-class="vm.getClass('/activities')">
-                <a href="#/activities">فعاليات</a>
-              </li>
-              <li title="كتب و إصدارات" ng-class="vm.getClass('/books')"><a href="#/books">إصدارات</a></li>
-              <li title="مقالات" ng-class="vm.getClass('/articles')"><a href="#/articles">مقالات</a></li>
-              <li title="مقتطفات" ng-class="vm.getClass('/quotes')"><a href="#/quotes">مقتطفات</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
-    <div ng-view=""></div>
+      <div ng-view=""></div>
 
-    <hr>
+      <hr>
 
-    <footer class="footer container">
-      <p class="text-center lead" dir="rtl">
-        &copy; 2015 عبدالواحد الأنصاري
-      </p>
-    </footer>
+      <footer class="footer container">
+        <p class="text-center lead" dir="rtl">
+          &copy; 2015 عبدالواحد الأنصاري
+        </p>
+      </footer>
+    </section>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -160,6 +162,7 @@
     <script src="scripts/services/user_service.js"></script>
     <script src="scripts/services/image_service.js"></script>
     <script src="scripts/filters/truncate.js"></script>
+    <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
 
     <script>
