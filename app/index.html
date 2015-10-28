@@ -61,14 +61,14 @@
                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li title="مقتطف" ng-class="vm.getClass('/quotes/new')">
-                      <a href="#/quotes/new" class="text-right">مقتطف</a>
+                    <li class="disabled" ng-class="vm.getClass('/selections/new')">
+                      <a href="#/selections/new" class="text-right">مختارة</a>
+                    </li>
+                    <li class="disabled" ng-class="vm.getClass('/poems/new')">
+                      <a href="#/poems/new" class="text-right">قصيدة</a>
                     </li>
                     <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media/new')">
                       <a href="#/media/new" class="text-right">وسائط</a>
-                    </li>
-                    <li class="disabled" title="فعالية أو مناسبة" ng-class="vm.getClass('/activities/new')">
-                      <a href="#/activities/new" class="text-right">فعالية</a>
                     </li>
                     <li title="كتاب أو إصدار" ng-class="vm.getClass('/books/new')">
                       <a href="#/books/new" class="text-right">إصدار</a>
@@ -83,12 +83,10 @@
                 <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media')">
                   <a href="#/media">وسائط</a>
                 </li>
-                <li class="disabled" title="مناسبات و فعاليات" ng-class="vm.getClass('/activities')">
-                  <a href="#/activities">فعاليات</a>
-                </li>
                 <li title="كتب و إصدارات" ng-class="vm.getClass('/books')"><a href="#/books">إصدارات</a></li>
+                <li title="مختارات" class="disabled" ng-class="vm.getClass('/selections')"><a href="#/articles">مختارات</a></li>
+                <li title="شعر" class="disabled" ng-class="vm.getClass('/poems')"><a href="#/articles">شعر</a></li>
                 <li title="مقالات" ng-class="vm.getClass('/articles')"><a href="#/articles">مقالات</a></li>
-                <li title="مقتطفات" ng-class="vm.getClass('/quotes')"><a href="#/quotes">مقتطفات</a></li>
               </ul>
             </div>
           </div>
