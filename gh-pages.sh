@@ -1,7 +1,9 @@
 #!/bin/env sh
+# This script assumes:
+# 1. You have a remote with the name `origin`
+# 2. You have a branch with the name `gh-pages` on that remote
 
-git branch -D gh-pages
-git checkout -b gh-pages HEAD
+git checkout -B gh-pages HEAD
 
 grunt build
 
