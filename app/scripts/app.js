@@ -21,7 +21,6 @@ angular
     'firebase',
     'angular-loading-bar',
     'monospaced.elastic',
-    'ckeditor',
     'imgurUpload',
     'ui.bootstrap'
   ])
