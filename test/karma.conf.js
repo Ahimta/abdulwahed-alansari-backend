@@ -37,7 +37,6 @@ module.exports = function(config) {
       'bower_components/angularfire/dist/angularfire.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
       'bower_components/angular-elastic/elastic.js',
-      'bower_components/angular-ckeditor/angular-ckeditor.js',
       'bower_components/angular-imgur-upload/dist/angular-imgur-upload.min.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-mocks/angular-mocks.js',

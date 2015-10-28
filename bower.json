@@ -16,7 +16,6 @@
     "angularfire": "~1.1.2",
     "angular-loading-bar": "~0.8.0",
     "angular-elastic": "~2.5.0",
-    "angular-ckeditor": "~1.0.0",
     "angular-imgur-upload": "~0.0.1",
     "angular-bootstrap": "~0.13.4"
   },

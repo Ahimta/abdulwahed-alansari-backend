@@ -9,19 +9,15 @@
   </ol>
 </nav>
 
-<section class="container" ng-show="mainCtrl.isAdmin()">
-  <form name="aboutForm" ng-if="vm.isEnabled" ng-submit="vm.save()">
-    <div class="form-group">
-      <textarea class="form-control" dir="rtl" autofocus required ng-model="$parent.vm.aboutHTML" ckeditor></textarea>
-    </div>
-    <button type="submit" class="btn btn-block btn-lg btn-primary"
-            ng-disabled="aboutForm.$invalid || aboutForm.$pristine">حفظ</button>
-  </form>
-  <p class="text-center" dir="rtl" ng-hide="vm.isEnabled">
-    لا يمكن تعديل هذه الصفحة باستخدام الجهاز أو المتصفح المستخدم حالياً.
-  </p>
+<section class="container text-center">
+  <div class="btn-group">
+    <a class="btn btn-default" target="_blank" href="https://www.facebook.com/abdulwahed.alansary">
+      <i class="fa fa-facebook-square fa-5x"></i>
+    </a>
+    <a class="btn btn-default" target="_blank" href="https://twitter.com/abdulwahed1978">
+      <i class="fa fa-twitter-square fa-5x"></i>
+    </a>
+  </div>
 </section>
 
-<section class="container" ng-show="mainCtrl.isVisitor()">
-  <div dir="rtl" ng-bind-html="vm.aboutHTML"></div>
-</section>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
