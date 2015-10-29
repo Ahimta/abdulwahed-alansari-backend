@@ -64,9 +64,7 @@
                     <li class="disabled" ng-class="vm.getClass('/selections/new')">
                       <a href="#/selections/new" class="text-right">مختارة</a>
                     </li>
-                    <li class="disabled" ng-class="vm.getClass('/poems/new')">
-                      <a href="#/poems/new" class="text-right">قصيدة</a>
-                    </li>
+                    <li ng-class="vm.getClass('/poems/new')"><a href="#/poems/new" class="text-right">قصيدة</a></li>
                     <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media/new')">
                       <a href="#/media/new" class="text-right">وسائط</a>
                     </li>
@@ -154,6 +152,7 @@
     <script src="scripts/services/image_service.js"></script>
     <script src="scripts/filters/truncate.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/poems_new.js"></script>
     <!-- endbuild -->
 
     <script>

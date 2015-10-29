@@ -79,6 +79,11 @@ angular
         controller: 'ContactCtrl',
         controllerAs: 'vm'
       })
+      .when('/poems/new', {
+        templateUrl: 'views/poems_new.html',
+        controller: 'PoemsNewCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
