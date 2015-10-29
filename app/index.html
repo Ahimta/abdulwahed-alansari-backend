@@ -83,7 +83,7 @@
                 </li>
                 <li title="كتب و إصدارات" ng-class="vm.getClass('/books')"><a href="#/books">إصدارات</a></li>
                 <li title="مختارات" class="disabled" ng-class="vm.getClass('/selections')"><a href="#/articles">مختارات</a></li>
-                <li title="شعر" class="disabled" ng-class="vm.getClass('/poems')"><a href="#/articles">شعر</a></li>
+                <li title="شعر" ng-class="vm.getClass('/poems')"><a href="#/poems">شعر</a></li>
                 <li title="مقالات" ng-class="vm.getClass('/articles')"><a href="#/articles">مقالات</a></li>
               </ul>
             </div>
@@ -153,6 +153,7 @@
     <script src="scripts/filters/truncate.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/poems_new.js"></script>
+    <script src="scripts/controllers/poems.js"></script>
     <!-- endbuild -->
 
     <script>
