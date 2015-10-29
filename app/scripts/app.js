@@ -89,6 +89,11 @@ angular
         controller: 'PoemsCtrl',
         controllerAs: 'vm'
       })
+      .when('/poem/:id/:action?', {
+        templateUrl: 'views/poem.html',
+        controller: 'PoemCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
