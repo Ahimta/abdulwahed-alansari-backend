@@ -18,6 +18,6 @@ describe('Controller: MediaCtrl', function () {
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(!!MediaCtrl.awesomeThings).toBe(true);
+    expect(!!MediaCtrl).toBe(true);
   });
 });
