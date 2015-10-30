@@ -99,6 +99,11 @@ angular
         controller: 'SelectionsNewCtrl',
         controllerAs: 'vm'
       })
+      .when('/selections', {
+        templateUrl: 'views/selections.html',
+        controller: 'SelectionsCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });

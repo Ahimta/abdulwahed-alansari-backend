@@ -18,16 +18,16 @@
     </div>
     <div dir="rtl" class="form-group">
       <label for="selectionDescription">الوصف</label>
-      <textarea class="form-control" id="selectionDescription" required ng-model="selection.text" msd-elastic>
+      <textarea class="form-control" id="selectionDescription" required ng-model="selection.description" msd-elastic>
       </textarea>
     </div>
     <div dir="rtl" class="form-group">
       <label for="selectionUrl">رابط المختارة</label>
-      <input type="url" class="form-control" id="selectionUrl" required ng-model="selection.url">
+      <input type="url" dir="ltr" class="form-control" id="selectionUrl" required ng-model="selection.url">
     </div>
     <div dir="rtl" class="form-group">
       <label for="selectionDownloadUrl">رابط التحميل</label>
-      <input type="url" class="form-control" id="selectionDownloadUrl" ng-model="selection.downloadUrl">
+      <input type="url" dir="ltr" class="form-control" id="selectionDownloadUrl" ng-model="selection.downloadUrl">
     </div>
     <button type="submit" class="btn btn-block btn-lg btn-success"
             ng-disabled="selectionForm.$invalid">إضافة المختارة</button>

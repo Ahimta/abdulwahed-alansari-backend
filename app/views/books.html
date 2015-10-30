@@ -14,7 +14,7 @@
     <header class="panel-heading text-center">
       <input type="text" class="form-control" dir="rtl" autofocus required
              ng-model="book.title" ng-show="vm.isEditing(book.$id)">
-      <sapn dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
+      <span dir="rtl" ng-bind="book.title" ng-hide="vm.isEditing(book.$id)"></span>
     </header>
     <div class="panel-body" ng-show="book.description">
       <pre dir="rtl" ng-bind="book.description" ng-hide="vm.isEditing(book.$id)"></pre>
