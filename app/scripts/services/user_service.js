@@ -8,15 +8,16 @@
  * Service in the abdulwahedAlansariFrontendApp.
  */
 angular.module('abdulwahedAlansariFrontendApp')
-  .service('UserService', function ($window) {
-
-    function userRole (role) {
-
+  .service('UserService', function ($window)
+  {
+    function userRole (role)
+    {
       if (role) { return $window.localStorage.setItem('userRole', role); }
       else      { return $window.localStorage.getItem('userRole');       }
     }
 
-    this.isVisitor = function () {
+    this.isVisitor = function ()
+    {
       var role = userRole();
       return (!role || role === 'visitor');
     };

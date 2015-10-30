@@ -94,6 +94,11 @@ angular
         controller: 'PoemCtrl',
         controllerAs: 'vm'
       })
+      .when('/selections/new', {
+        templateUrl: 'views/selections_new.html',
+        controller: 'SelectionsNewCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
