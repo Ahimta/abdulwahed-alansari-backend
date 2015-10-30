@@ -65,9 +65,6 @@
                       <a href="#/selections/new" class="text-right">مختارة</a>
                     </li>
                     <li ng-class="vm.getClass('/poems/new')"><a href="#/poems/new" class="text-right">قصيدة</a></li>
-                    <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media/new')">
-                      <a href="#/media/new" class="text-right">وسائط</a>
-                    </li>
                     <li title="كتاب أو إصدار" ng-class="vm.getClass('/books/new')">
                       <a href="#/books/new" class="text-right">إصدار</a>
                     </li>
@@ -78,9 +75,7 @@
                 </li>
                 <li title="من أنا" ng-class="vm.getClass('/about')"><a href="#/about">من أنا</a></li>
                 <li title="راسلني" ng-class="vm.getClass('/contact')"><a href="#/contact">راسلني</a></li>
-                <li class="disabled" title="مرئيات و صوتيات" ng-class="vm.getClass('/media')">
-                  <a href="#/media">وسائط</a>
-                </li>
+                <li title="مرئيات و صوتيات" ng-class="vm.getClass('/media')"><a href="#/media">وسائط</a></li>
                 <li title="كتب و إصدارات" ng-class="vm.getClass('/books')"><a href="#/books">إصدارات</a></li>
                 <li title="مختارات" ng-class="vm.getClass('/selections')"><a href="#/selections">مختارات</a></li>
                 <li title="شعر" ng-class="vm.getClass('/poems')"><a href="#/poems">شعر</a></li>
@@ -157,6 +152,7 @@
     <script src="scripts/controllers/poem.js"></script>
     <script src="scripts/controllers/selections_new.js"></script>
     <script src="scripts/controllers/selections.js"></script>
+    <script src="scripts/controllers/media.js"></script>
     <!-- endbuild -->
 
     <script>

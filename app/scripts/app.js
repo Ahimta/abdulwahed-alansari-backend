@@ -104,6 +104,11 @@ angular
         controller: 'SelectionsCtrl',
         controllerAs: 'vm'
       })
+      .when('/media', {
+        templateUrl: 'views/media.html',
+        controller: 'MediaCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
